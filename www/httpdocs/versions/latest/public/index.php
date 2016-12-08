@@ -27,7 +27,7 @@ $req = array(
 	'depArrTime' => formatZulu(time()-10*60)
 );
 
-echo $req['depArrTime'];
+//echo $req['depArrTime'];
 
 $br = "\r\n";
 $header = "Content-type: text/XML".$br
@@ -66,11 +66,80 @@ $options = array(
     )
 );
 $context  = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
+/*$result = file_get_contents($url, false, $context);
 if ($result === FALSE) { 
 	echo "error!!";
 	die;
 }
+*/
+
+$result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<Trias xmlns=\"http://www.vdv.de/trias\" version=\"1.1\">
+    <ServiceDelivery>
+        <ResponseTimestamp xmlns=\"http://www.siri.org.uk/siri\">2016-08-18T08:10:51Z</ResponseTimestamp>
+        <Status xmlns=\"http://www.siri.org.uk/siri\">true</Status>
+        <MoreData>false</MoreData>
+        <Language>de</Language>
+        <DeliveryPayload>
+            <StopEventResponse>
+                <StopEventResult>
+                    <ResultId>ID-01C48EFC-863C-41B1-9841-43C85D0DDD58</ResultId>
+                    <StopEvent>
+
+<PreviousCall>
+    <CallAtStop>
+        <StopPointRef>8500028</StopPointRef>
+        <StopPointName>
+            <Text>Tecknau</Text>
+            <Language>DE</Language>
+        </StopPointName>
+        <ServiceArrival>
+            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
+        </ServiceArrival>
+        <ServiceDeparture>
+            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
+        </ServiceDeparture>
+        <StopSeqNumber>1</StopSeqNumber>
+    </CallAtStop>
+</PreviousCall>
+
+<ThisCall>
+    <CallAtStop>
+        <StopPointRef>8502113</StopPointRef>
+        <StopPointName>
+            <Text>Aarau</Text>
+            <Language>DE</Language>
+        </StopPointName>
+        <ServiceDeparture>
+            <TimetabledTime>2016-11-10T09:24:00Z</TimetabledTime>
+            <EstimatedTime>2016-11-10T09:24:00Z</EstimatedTime>
+        </ServiceDeparture>
+        <StopSeqNumber>2</StopSeqNumber>
+    </CallAtStop>
+</ThisCall>
+
+<OnwardCall>
+    <CallAtStop>
+        <StopPointRef>8502192</StopPointRef>
+        <StopPointName>
+            <Text>Distelberg</Text>
+            <Language>DE</Language>
+        </StopPointName>
+        <ServiceArrival>
+            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
+        </ServiceArrival>
+        <ServiceDeparture>
+            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
+        </ServiceDeparture>
+        <StopSeqNumber>4</StopSeqNumber>
+    </CallAtStop>
+</OnwardCall>
+                    </StopEvent>
+                </StopEventResult>
+            </StopEventResponse>
+        </DeliveryPayload>
+    </ServiceDelivery>
+</Trias>";
 
 $trias = simplexml_load_string($result);
 $arrivals = $trias->ServiceDelivery->DeliveryPayload->StopEventResponse->StopEventResult;
@@ -99,9 +168,18 @@ foreach($arrivals as $a) {
 		$stop->StopPointName->Text . ': '.$stop-> ServiceArrival->TimetabledTime .$estimated. ' -> ' .
 		$end->StopPointName->Text . ' (' . $end->ServiceArrival->TimetabledTime . ')'
 		."\n";
+	$arr = array();
+	$arr['FirstCall'] = $start;
+	$arr['ThisCall'] = $start;
+	$arr['startPoint'] = $start;
+	$arrivalRows[] = $arr;
 }
 
+// detailed description: 
+// https://opentransportdata.swiss/de/cookbook/abfahrts-ankunftsanzeiger/
 $TIMETABLE = array();
+$TIMETABLE['trias'] = $trias;
+$TIMETABLE['arrivals'] = $arrivalRows;
 $TIMETABLE['rows'] = $rows;
 
 /////// print stuff
