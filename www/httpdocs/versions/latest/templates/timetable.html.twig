@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+{% for row in timetable.rows|default([]) %}
+{{ row }}
+{% endfor %}
+
+{% endblock %}

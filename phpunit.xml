@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE project>
+<phpunit 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    colors="true"
+    verbose="true"
+    debug="true"
+    beStrictAboutOutputDuringTests="true"
+    bootstrap="./www/httpdocs/versions/latest/phpunit_bootstrap.php">
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./www/httpdocs/versions/latest/lib/</directory>
+            <exclude>
+                <directory suffix='.t.php'>./www/httpdocs/versions/latest/lib</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <testsuite name='classesTest'>
+        <directory suffix='.t.php'>./www/httpdocs/versions/latest/lib</directory>
+    </testsuite>
+    <logging>
+        <log type="coverage-html" target="./tmp/phpunit/coverage_report" 
+        lowUpperBound="35"
+        highLowerBound="70"/>
+        <log type="testdox-html" target="./tmp/phpunit/testdox.html"/>
+        <log type="testdox-text" target="./tmp/phpunit/testdox.txt"/>
+    </logging>
+</phpunit>

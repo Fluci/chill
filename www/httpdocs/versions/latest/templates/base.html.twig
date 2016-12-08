@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="{{ page.langCode }}">
+    <head>
+        <meta http-equiv="Content-Type" content="{{ page.contentType|default("text/html; charset=utf-8") }}" />
+        <title>{% block title %}{% endblock %}</title>
+{% block CSS %}
+    {% for css in page.stylesheets|default([]) %}
+            <link href="{{ css }}" rel="stylesheet" type="text/css" media="all" />
+    {% endfor %}
+{% endblock %}
+{% block jsIncludes %}
+  {% for js in page.jsIncludes|default([]) %}
+            <script type="text/javascript" src="{{ js }}"></script>
+  {% endfor %}
+{% endblock %}
+{% block jsHead %}
+  {% for js in page.jsHeadSnippets|default([]) %}
+            <script type="text/javascript">{{ js|raw }}</script>
+  {% endfor %}
+{% endblock %}
+    </head>
+    <body>
+{% block body %}
+
+  {% block all %}
+    <div id="root">
+      {% block root %}
+      
+      
+        {% spaceless %}
+          <header>
+          	{% block header %}
+              {% if page.logo is defined %}
+                <a href="/">
+                  <img src="{{ page.logo.url }}" alt="{{ page.logo.alt }}" id="title_logo" />
+                </a>
+              {% endif %}
+              {% if page.title is defined %}
+                <h1>{{ page.title }}</h1>
+              {% endif %}
+            {% endblock %} {# header #}
+          </header>
+        {% endspaceless %}
+
+        <div id="content">
+    {% block content %}
+            A nice body!
+    {% endblock %}{# content #}
+        </div>{# content #}
+
+        <footer>
+          {% block footer %}{% endblock %}{# footer #}
+        </footer>
+        
+        
+      {% endblock %}{# root #}
+    </div>{# root #}
+  {% endblock %}{# all #}
+  
+  
+  {% block afterContent %}{% endblock %}{# afterContent #}
+  
+  {% block jsFoot %}
+    {% for js in page.jsFootSnippets|default([]) %}
+      <script type="text/javascript">{{ js|raw }}</script>
+    {% endfor %}
+  {% endblock %}{# jsFoot #}
+
+{% endblock %}{# body #}
+    </body>
+</html>

@@ -1,0 +1,5 @@
+# we don't want this file to end up in the repository since it includes platform specific stuff, keys, etc. ...
+
+config.php
+
+# How to create config.php: duplicate config_default.php and fill in your values
