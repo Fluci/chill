@@ -1,0 +1,36 @@
+#!/bin/sh
+
+DIR=www/versions/latest
+
+if [ "$1" != "" ]
+then
+    DIR=$1
+fi
+
+EXEC=phpcpd
+
+echo "Looking for phpcpd command ..."
+${EXEC} -V > /dev/null
+
+if [ $? != 0 ]
+    then
+        echo "Looking for phpcpd in vendor/ ..."
+        EXEC="vendor/sebastian/phpcpd/phpcpd"
+        ${EXEC} -V > /dev/null
+
+fi
+
+if [ $? != 0 ]
+    then
+        echo "phpcpd not found." 1>&2
+        exit 1
+fi
+
+${EXEC} \
+    --exclude=vendor \
+    --exclude=twig_cache \
+    --no-interaction \
+    --log-pmd=tmp/phpcpd/results.xml \
+    ${DIR}
+
+exit $?

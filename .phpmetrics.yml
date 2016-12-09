@@ -1,0 +1,25 @@
+# file <php_metrics.yml>
+default:
+    # paths to explore
+    path:
+        extensions: php
+        exclude: vendor|twig_cache|.t.php
+
+    # report and violations files
+    logging:
+        report:
+            xml:    ./tmp/php_metrics/production_report.xml
+            html:   ./tmp/php_metrics/production_report.html
+            csv:    ./tmp/php_metrics/production_report.csv
+        violations:
+            xml:    ./tmp/php_metrics/production_violations.xml
+        chart:
+            bubbles: ./tmp/php_metrics/production_bubbles.svg
+
+    # condition of failure
+    failure: average.maintainabilityIndex < 50 or sum.loc > 10000
+
+    # rules used for color
+    rules:
+      cyclomaticComplexity: [ 10, 6, 2 ]
+      maintainabilityIndex: [ 0, 69, 85 ]

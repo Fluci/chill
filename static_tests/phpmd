@@ -1,0 +1,39 @@
+#!/bin/sh
+
+DIR=www/versions/latest
+
+TARGETS=cleancode,codesize,naming,design,unusedcode;
+
+FORMAT=text
+
+if [ "$1" != "" ]
+then
+    DIR=$1
+fi
+
+EXEC=phpmd
+
+echo "Looking for phpmd command ..."
+${EXEC} --version > /dev/null
+
+if [ $? != 0 ]
+    then
+        echo "Looking for phpmd in vendor/ ..."
+        EXEC="vendor/phpmd/phpmd/src/bin/phpmd"
+        ${EXEC} --version > /dev/null
+fi
+
+if [ $? != 0 ]
+    then
+        echo "phpmd not found." 1>&2
+        exit 1
+fi
+
+${EXEC} \
+    $DIR \
+    $FORMAT \
+    $TARGETS \
+    --exclude vendor,twig_cache \
+    --strict
+
+exit $?

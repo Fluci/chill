@@ -1,5 +1,9 @@
 {
     "require-dev": {
-        "phpunit/phpunit": "@stable"
+        "phpunit/phpunit": "@stable",
+		"phpmd/phpmd": "@stable",
+		"phpmetrics/phpmetrics": "@stable",
+		"pdepend/pdepend": "@stable",
+		"sebastian/phpcpd": "@stable"
     }
 }

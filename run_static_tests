@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+
+START=$(ruby -e 'puts Time.now.to_f')
+FAILS=0
+TOTAL=0
+
+CHECKS_DIR=./static_tests
+
+EXECS=`find ${CHECKS_DIR} -type f -perm +111 -print`
+
+GREY='\033[0;37m'
+RED='\033[1;31m'
+NC='\033[0m'
+
+DIR=www/versions/latest
+
+if [ $1 != "" ]
+then
+	DIR=$1
+fi
+
+
+for d in $EXECS
+do
+	echo "${GREY}executing ${d} ${DIR} ...${NC}"
+	$d $DIR
+	if [ $? != 0 ];
+	then
+		echo "${RED}Check ${d} ${DIR} failed.${NC}"
+		let FAILS=FAILS+1
+	fi
+	let TOTAL=TOTAL+1
+done
+
+if [ $FAILS == 0 ]
+then
+	echo "All ${TOTAL} checks succeeded."
+else
+	let SUCCESS=TOTAL-FAILS # more motivation
+	echo "${SUCCESS}/${TOTAL} checks succeeded."
+fi
+
+END=$(ruby -e 'puts Time.now.to_f')
+DIFF=$(echo "$END - $START" | bc)
+echo Time: ${DIFF} s
+
+exit $FAILS

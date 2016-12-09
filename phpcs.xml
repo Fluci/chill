@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ruleset name="chill">
+    <description>The coding standard for chill.</description>
+
+    <!-- Documentation: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
+
+    <file>www</file>
+
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/twig_cache/*</exclude-pattern>
+    <exclude-pattern>*/tmp/*</exclude-pattern>
+
+    <!-- show sniff -->
+    <arg value="s"/>
+
+    <!-- explain standard -->
+    <arg value="e"/>
+
+    <!-- use colors -->
+    <arg name="colors"/>
+
+    <arg name="tab-width" value="4"/>
+
+    <!-- 1: lot of errors, 10: very little errors -->
+    <arg name="severity" value="1"/>
+    <arg name="error-severity" value="1"/>
+    <arg name="warning-severity" value="1"/>
+
+    <rule ref="PHPCS">
+        <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
+        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
+    </rule>
+</ruleset>

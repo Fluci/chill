@@ -1,0 +1,34 @@
+#!/bin/sh
+
+DIR=www/versions/latest
+
+if [ "$1" != "" ]
+then
+    DIR=$1
+fi
+
+EXEC=phpmetrics
+
+echo "Looking for phpmetrics command ..."
+${EXEC} -V > /dev/null
+
+if [ $? != 0 ]
+    then
+        echo "Looking for phpmetrics in vendor/ ..."
+        EXEC="vendor/phpmetrics/phpmetrics/bin/phpmetrics"
+        ${EXEC} -V > /dev/null
+fi
+
+if [ $? != 0 ]
+    then
+        echo "phpmetrics not found." 1>&2
+        exit 1
+fi
+
+${EXEC} \
+    --no-ansi \
+    --no-interaction \
+    --config=.phpmetrics.yml \
+    ${DIR}
+
+exit $?

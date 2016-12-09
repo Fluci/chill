@@ -1,0 +1,38 @@
+#!/bin/sh
+
+DIR=www/versions/latest
+
+PREFIX=tmp/pdepend/${TAR}
+
+if [ "$1" != "" ]
+then
+    DIR=$1
+fi
+
+EXEC=pdepend
+
+echo "Looking for pdepend command ..."
+${EXEC} --version > /dev/null
+
+if [ $? != 0 ]
+    then
+        echo "Looking for phpunit in vendor/ ..."
+        EXEC="vendor/pdepend/pdepend/src/bin/pdepend"
+        ${EXEC} --version > /dev/null
+fi
+
+if [ $? != 0 ]
+    then
+        echo "pdepend not found." 1>&2
+        exit 1
+fi
+
+${EXEC}     \
+    --summary-xml=${PREFIX}_summary.xml \
+    --jdepend-chart=${PREFIX}_chart.svg \
+    --overview-pyramid=${PREFIX}_pyramid.svg \
+    --ignore=vendor \
+    $DIR
+#   --configuration=
+#   --coverage-report=
+exit $?

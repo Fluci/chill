@@ -1,0 +1,22 @@
+#!/bin/sh
+
+TAR=production
+
+EXEC=phpcs
+
+${EXEC} --version > /dev/null
+
+if [ $? != 0 ]
+    then
+        echo "phpcs not found." 1>&2
+        exit 1
+fi
+
+${EXEC} \
+    --colors \
+    --tab-width=4 \
+    -w \
+    --report-full \
+    --report-summary
+
+exit $?

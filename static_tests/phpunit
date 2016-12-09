@@ -1,0 +1,24 @@
+#!/bin/sh
+
+EXEC=phpunit
+
+echo "Looking for phpunit command ..."
+${EXEC} --version > /dev/null
+
+if [ $? != 0 ]
+    then
+        echo "Looking for phpunit in vendor/ ..."
+        EXEC="vendor/phpunit/phpunit/phpunit"
+        ${EXEC} --version > /dev/null
+fi
+
+if [ $? != 0 ]
+    then
+        echo "phpunit not found." 1>&2
+        exit 1
+fi
+
+# run unit tests
+${EXEC}
+
+exit $?
