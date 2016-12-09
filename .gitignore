@@ -12,13 +12,13 @@
 
 # ignore direcotries with dynamic data
 # ignore all folders
-/www/httpdocs/data/*/
-/www/httpdocs/logs
-/www/httpdocs/tmp
+/www/data/*/
+/www/logs
+/www/tmp
 
 # ignore libs
-/www/httpdocs/versions/*/vendor
-/www/httpdocs/versions/*/twig_cache
+/www/versions/*/vendor
+/www/versions/*/twig_cache
 
 # ignore eclipse
 .buildpath

@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{# expects variable `trias` which is the root of the request, type: SimpleXMLElement #}
+
+
+{% block content %}
+
+{% set journeys = trias.ServiceDelivery.DeliveryPayload.StopEventResponse.StopEventResult %}
+
+{% for journey in journeys %}
+
+{# get first station #}
+{% set start = journey.StopEvent.PreviousCall.CallAtStop %}
+
+{# get the stop we requested to observe #}
+{% set stop = journey.StopEvent.ThisCall.CallAtStop %}
+
+{# get last station where the train will end #}
+{% set end = journey.StopEvent.xpath("*[last()]")[0].CallAtStop %}
+
+{{ start.ServiceDeparture.TimetabledTime }} 
+{{ start.StopPointName.Text }} 
+-> {{ stop.StopPointName.Text }}: {{ stop.ServiceDeparture.TimetabledTime }}
+-> {{ end.StopPointName.Text }} <br />
+{% endfor %}
+
+{% endblock %}

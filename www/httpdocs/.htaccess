@@ -1,8 +1,0 @@
-
-Options +FollowSymlinks
-
-RewriteEngine on
-RewriteBase /
-
-RewriteRule ^$ ./versions/latest/public/index.php [QSA,NC,L]
-RewriteRule ^(.*)$ /versions/latest/public/$1 [QSA,NC]
