@@ -12,6 +12,10 @@
 require_once __DIR__.'/../environment.php';
 
 $use_mock = \Chill\Util\Util::methodRequest('mock', array('GET'), '0') === '1' ? true : $CONFIG['use_mock'];
+
+// this id comes from
+// https://opentransportdata.swiss/dataset/695c7af6-d486-4cde-9bf0-a92fdd581a4e/resource/911a4eb7-9d10-440f-904b-b0872b9727c1/download/bahnhof.csv
+// https://opentransportdata.swiss/dataset/bhlist
 $stopPointRef = \Chill\Util\Util::methodRequest('stopPointRef', array('GET'), '8503099');
 $stopPointRef = intval($stopPointRef);
 

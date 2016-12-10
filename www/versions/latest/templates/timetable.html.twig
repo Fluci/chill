@@ -7,7 +7,10 @@
 {% if page.use_mock %}
 This is mocked data!<br />
 {% endif %}
-
+<div class="journeys_title">
+	Abfahrt Départ Partenza
+</div>
+<div class="journeys">
 {% for journey in journeys %}
 	{# get first station #}
 	{% set start = journey.PreviousCalls[0] %}
@@ -19,7 +22,7 @@ This is mocked data!<br />
 	{% set end = journey.OnwardCalls|last %}
 
 <div class="stopPoint">
-	<p class="arrival">{{ stop.ServiceArrival.TimetabledTime|date("m/d/Y H:i:s") }}</p>
+	<p class="arrival">{{ stop.ServiceArrival.TimetabledTime|date("H:i") }}</p>
 	<p class="detail">
 	{{ start.StopPointName.Text }} {{ start.ServiceDeparture.TimetabledTime|date("m/d/Y H:i:s") }} 
 	--> {{ stop.StopPointName.Text }} 
@@ -29,4 +32,5 @@ This is mocked data!<br />
 
 {% endfor %}
 
+</div>{# journeys #}
 {% endblock %}
