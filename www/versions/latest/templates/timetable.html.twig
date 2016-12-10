@@ -1,27 +1,32 @@
 {% extends "base.html.twig" %}
 
-{# expects variable `trias` which is the root of the request, type: SimpleXMLElement #}
-
+{# expects variable `journeys` #}
 
 {% block content %}
 
-{% set journeys = trias.ServiceDelivery.DeliveryPayload.StopEventResponse.StopEventResult %}
+{% if page.use_mock %}
+This is mocked data!<br />
+{% endif %}
 
 {% for journey in journeys %}
+	{# get first station #}
+	{% set start = journey.PreviousCalls[0] %}
 
-{# get first station #}
-{% set start = journey.StopEvent.PreviousCall.CallAtStop %}
+	{# get the stop we requested to observe #}
+	{% set stop = journey.ThisCall %}
 
-{# get the stop we requested to observe #}
-{% set stop = journey.StopEvent.ThisCall.CallAtStop %}
+	{# get last station where the train will end #}
+	{% set end = journey.OnwardCalls|last %}
 
-{# get last station where the train will end #}
-{% set end = journey.StopEvent.xpath("*[last()]")[0].CallAtStop %}
+<div class="stopPoint">
+	<p class="arrival">{{ stop.ServiceArrival.TimetabledTime|date("m/d/Y H:i:s") }}</p>
+	<p class="detail">
+	{{ start.StopPointName.Text }} {{ start.ServiceDeparture.TimetabledTime|date("m/d/Y H:i:s") }} 
+	--> {{ stop.StopPointName.Text }} 
+	--> {{ end.StopPointName.Text }} {{ end.ServiceArrival.TimetabledTime|date("m/d/Y H:i:s") }}
+	</p>
+</div>{# stopPoint #}
 
-{{ start.ServiceDeparture.TimetabledTime }} 
-{{ start.StopPointName.Text }} 
--> {{ stop.StopPointName.Text }}: {{ stop.ServiceDeparture.TimetabledTime }}
--> {{ end.StopPointName.Text }} <br />
 {% endfor %}
 
 {% endblock %}

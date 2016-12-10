@@ -6,17 +6,17 @@
     verbose="true"
     debug="true"
     beStrictAboutOutputDuringTests="true"
-    bootstrap="./www/httpdocs/versions/latest/phpunit_bootstrap.php">
+    bootstrap="www/versions/latest/phpunit_bootstrap.php">
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./www/httpdocs/versions/latest/lib/</directory>
+            <directory suffix=".php">www/versions/latest/lib/</directory>
             <exclude>
-                <directory suffix='.t.php'>./www/httpdocs/versions/latest/lib</directory>
+                <directory suffix='.t.php'>www/versions/latest/lib</directory>
             </exclude>
         </whitelist>
     </filter>
     <testsuite name='classesTest'>
-        <directory suffix='.t.php'>./www/httpdocs/versions/latest/lib</directory>
+        <directory suffix='.t.php'>www/versions/latest/lib</directory>
     </testsuite>
     <logging>
         <log type="coverage-html" target="./tmp/phpunit/coverage_report" 

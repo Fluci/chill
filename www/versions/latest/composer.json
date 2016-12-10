@@ -1,6 +1,6 @@
 {
     "require": {
-        "twig/twig": "@stable",
+        "twig/twig": "@stable"
     },
     "require-dev": {
         "phpunit/phpunit": "@stable"

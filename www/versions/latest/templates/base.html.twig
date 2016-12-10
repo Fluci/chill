@@ -5,7 +5,7 @@
         <title>{% block title %}{% endblock %}</title>
 {% block CSS %}
     {% for css in page.stylesheets|default([]) %}
-            <link href="{{ css }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ css.url }}" rel="stylesheet" type="text/css" media="{{ css.media|default("all") }}" />
     {% endfor %}
 {% endblock %}
 {% block jsIncludes %}

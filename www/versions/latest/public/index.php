@@ -11,23 +11,20 @@
 
 require_once __DIR__.'/../environment.php';
 
+$use_mock = \Chill\Util\Util::methodRequest('mock', array('GET'), '0') === '1' ? true : $CONFIG['use_mock'];
+$stopPointRef = \Chill\Util\Util::methodRequest('stopPointRef', array('GET'), '8503099');
+$stopPointRef = intval($stopPointRef);
+
+$PAGE['use_mock'] = $use_mock;
+
 $url = 'https://api.opentransportdata.swiss/trias';
 
-function formatZulu($timestamp = null){
-	if($timestamp == null){
-		$timestamp = time();
-	}
-	return date('Y-m-d\TH:i:s\Z', $timestamp);
-}
-
 $req = array(
-	'stopPointRef' => '8502113',
-	'timestamp' => formatZulu(), // 2016-06-27T13:34:00
+	'stopPointRef' => $stopPointRef,
+	'timestamp' => \Chill\Util\Util::formatZulu(), // 2016-06-27T13:34:00
 	'numberOfResults' => '10',
-	'depArrTime' => formatZulu(time()-10*60)
+	'depArrTime' => \Chill\Util\Util::formatZulu(time()-10*60)
 );
-
-//echo $req['depArrTime'];
 
 $br = "\r\n";
 $header = "Content-type: text/XML".$br
@@ -65,64 +62,37 @@ $options = array(
         'content' => $request
     )
 );
-$context  = stream_context_create($options);
 
-// $result = file_get_contents($url, false, $context);
-// mock
-$result = file_get_contents("mock.txt");
+$context  = stream_context_create($options);
+$result;
+if (!$use_mock) {
+	$result = file_get_contents($url, false, $context);
+} else {
+	// mock
+	$result = file_get_contents("mock.txt");
+}
 
 if ($result === FALSE) { 
-	echo "error!!";
+	echo "error, data not available.";
 	die;
 }
+
 $trias = simplexml_load_string($result);
+
 $arrivals = $trias->ServiceDelivery->DeliveryPayload->StopEventResponse->StopEventResult;
-//echo '<pre>';
-//echo htmlentities(str_replace('><', ">\n<", $request));
-/*
-foreach($arrivals as $a) {
-	print_r($a);
-}
-//*/
-/*
-$TIMETABLE = array();
-foreach($arrivals as $a) {
-	$LINE = array();
-	$start = $a->StopEvent->PreviousCall[0]->CallAtStop;
-	$stop = $a->StopEvent->ThisCall->CallAtStop;
-	$b = $a->StopEvent->OnwardCall;
-	$end = $b[count($b-1)]->CallAtStop;
 
-	$oc = $a->StopEvent->xpath("*[last()]");
-	print_r($oc);
-
-	$estimated = $stop->ServiceDeparture->EstimatedTime;
-	if($estimated != null) {
-		$estimated = ', '.$estimated;
-	} else {
-		$estimated = "";
-	}
-	$rows[] = 
-		$start->StopPointName->Text . " (" . $start->ServiceDeparture->TimetabledTime . ") -> " . 
-		$stop->StopPointName->Text . ': '.$stop-> ServiceArrival->TimetabledTime .$estimated. ' -> ' .
-		$end->StopPointName->Text . ' (' . $end->ServiceArrival->TimetabledTime . ')'
-		."\n";
-	$arr = array();
-	$arr['FirstCall'] = $start;
-	$arr['ThisCall'] = $start;
-	$arr['startPoint'] = $start;
-	$arrivalRows[] = $arr;
+$journeys = array();
+$journeyFactory = new \Chill\Travel\JourneyFactory($CONFIG['timezone_datetime']);
+foreach($arrivals as $j) {
+	$journeys[] = $journeyFactory->createJourneyFromResponseTree($j);
 }
-//*/
 
 // detailed description: 
 // https://opentransportdata.swiss/de/cookbook/abfahrts-ankunftsanzeiger/
-$TIMETABLE = array();
-$TIMETABLE['trias'] = $trias;
 
 /////// print stuff
 
 $template = $TWIG->loadTemplate('timetable.html.twig');
-echo $template->render(array('page' => $PAGE, 'trias' => $trias));
+echo $template->render(array('page' => $PAGE, 'journeys' => $journeys));
 
 ?>

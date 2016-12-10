@@ -16,13 +16,15 @@ return array(
 		'autoescape' => true,
 		'cache' => TWIG_CACHE,
 		'debug' => $debug,
-		'strict_varialbes' => $debug,
+		'strict_variables' => $debug,
 //		'number_format' => array(2, '.', '\'') // TODO
 	)
 ),
 'debug' => $debug,
 'error_reporting_level' => ($debug ? -1 : 0),
-'timezone' => 'Europe/Zurich'
+'use_mock' => $debug,
+'timezone' => 'Europe/Zurich',
+'timezone_datetime' => \DateTimeZone::EUROPE
 );
 
 ?>

@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__.'/lib/autoloader.php';
+
 define("WEBSERVER_ROOT", realpath(__DIR__.'/../..'));
 define("DYNAMIC_DATA_DIR", WEBSERVER_ROOT.'/data');
 define("DYNAMIC_LOGS_DIR", WEBSERVER_ROOT.'/logs');

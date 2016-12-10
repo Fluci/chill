@@ -1,373 +1,3027 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Trias xmlns="http://www.vdv.de/trias" version="1.1">
-    <ServiceDelivery>
-        <ResponseTimestamp xmlns="http://www.siri.org.uk/siri">2016-08-18T08:10:51Z</ResponseTimestamp>
-        <Status xmlns="http://www.siri.org.uk/siri">true</Status>
-        <MoreData>false</MoreData>
-        <Language>de</Language>
-        <DeliveryPayload>
-            <StopEventResponse>
-                <StopEventResult>
-                    <ResultId>ID-01C48EFC-863C-41B1-9841-43C85D0DDD58</ResultId>
-                    <StopEvent>
-
+<ServiceDelivery>
+<ResponseTimestamp xmlns="http://www.siri.org.uk/siri">2016-12-09T14:48:27Z</ResponseTimestamp>
+<Status xmlns="http://www.siri.org.uk/siri">true</Status>
+<MoreData>false</MoreData>
+<Language>de</Language>
+<DeliveryPayload>
+<StopEventResponse>
+<StopEventResult>
+<ResultId>ID-80E9F419-4BB1-4F69-9497-CB707AFB9BCD</ResultId>
+<StopEvent>
 <PreviousCall>
-    <CallAtStop>
-        <StopPointRef>8500028</StopPointRef>
-        <StopPointName>
-            <Text>Tecknau 1</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>1</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8503504</StopPointRef>
+<StopPointName>
+<Text>Baden</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:04:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:04:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
 </PreviousCall>
 <PreviousCall>
-    <CallAtStop>
-        <StopPointRef>8500028</StopPointRef>
-        <StopPointName>
-            <Text>Tecknau 2</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>1</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8503503</StopPointRef>
+<StopPointName>
+<Text>Turgi</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:08:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:08:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:09:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:09:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
 </PreviousCall>
-
-
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8500309</StopPointRef>
+<StopPointName>
+<Text>Brugg AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:13:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:13:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:15:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:15:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502237</StopPointRef>
+<StopPointName>
+<Text>Lupfig</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:18:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:18:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:19:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:19:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502247</StopPointRef>
+<StopPointName>
+<Text>Birr</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:20:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:20:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:20:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:21:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502105</StopPointRef>
+<StopPointName>
+<Text>Othmarsingen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:24:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:24:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:25:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:27:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502119</StopPointRef>
+<StopPointName>
+<Text>Lenzburg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:31:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:31:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:32:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:32:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>7</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502114</StopPointRef>
+<StopPointName>
+<Text>Rupperswil</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:35:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:36:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>8</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
 <ThisCall>
-    <CallAtStop>
-        <StopPointRef>8502113</StopPointRef>
-        <StopPointName>
-            <Text>Aarau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:24:00Z</TimetabledTime>
-            <EstimatedTime>2016-11-10T09:26:00Z</EstimatedTime>
-        </ServiceDeparture>
-        <StopSeqNumber>2</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:39:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:39:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>9</StopSeqNumber>
+</CallAtStop>
 </ThisCall>
-
 <OnwardCall>
-    <CallAtStop>
-        <StopPointRef>8502192</StopPointRef>
-        <StopPointName>
-            <Text>Distelberg 1</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>4</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8502112</StopPointRef>
+<StopPointName>
+<Text>Schönenwerd SO</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:44:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:44:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>10</StopSeqNumber>
+</CallAtStop>
 </OnwardCall>
 <OnwardCall>
-    <CallAtStop>
-        <StopPointRef>8502192</StopPointRef>
-        <StopPointName>
-            <Text>Distelberg 2 (last)</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>4</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8502111</StopPointRef>
+<StopPointName>
+<Text>Däniken</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:46:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:47:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:46:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:48:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>11</StopSeqNumber>
+</CallAtStop>
 </OnwardCall>
-                    </StopEvent>
-                </StopEventResult>
-                <StopEventResult>
-                    <ResultId>ID-01C48EFC-863C-41B1-9841-43C85D0DDD58</ResultId>
-                    <StopEvent>
-
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8500218</StopPointRef>
+<StopPointName>
+<Text>Olten</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:53:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:53:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:55:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:55:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>12</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502000</StopPointRef>
+<StopPointName>
+<Text>Aarburg-Oftringen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:58:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:58:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:58:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:59:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>13</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8508103</StopPointRef>
+<StopPointName>
+<Text>Rothrist</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:02:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:02:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:03:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:03:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>14</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8508102</StopPointRef>
+<StopPointName>
+<Text>Murgenthal</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:07:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:07:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:07:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:08:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>15</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8508101</StopPointRef>
+<StopPointName>
+<Text>Roggwil-Wynau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:09:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:10:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:09:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:10:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>16</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8508100</StopPointRef>
+<StopPointName>
+<Text>Langenthal</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:15:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:15:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>17</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:01023::H:j16:8460</JourneyRef>
+<LineRef>odp:01023::H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>urbanRail</PtMode>
+<RailSubmode>suburbanRailway</RailSubmode>
+<Name>
+<Text>S-Bahn</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>23</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:11</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Baden</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Langenthal</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+<StopEventResult>
+<ResultId>ID-463E49B3-777F-4326-B6D9-E5A695AAB62C</ResultId>
+<StopEvent>
 <PreviousCall>
-    <CallAtStop>
-        <StopPointRef>8500028</StopPointRef>
-        <StopPointName>
-            <Text>Tecknau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>1</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8503123</StopPointRef>
+<StopPointName>
+<Text>Wetzikon</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:19:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:19:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
 </PreviousCall>
-
-<ThisCall>
-    <CallAtStop>
-        <StopPointRef>8502113</StopPointRef>
-        <StopPointName>
-            <Text>Aarau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:24:00Z</TimetabledTime>
-            <EstimatedTime>2016-11-10T09:24:00Z</EstimatedTime>
-        </ServiceDeparture>
-        <StopSeqNumber>2</StopSeqNumber>
-    </CallAtStop>
-</ThisCall>
-
-<OnwardCall>
-    <CallAtStop>
-        <StopPointRef>8502192</StopPointRef>
-        <StopPointName>
-            <Text>Distelberg</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>4</StopSeqNumber>
-    </CallAtStop>
-</OnwardCall>
-                    </StopEvent>
-                </StopEventResult>
-
-
-                <StopEventResult>
-                    <ResultId>ID-01C48EFC-863C-41B1-9841-43C85D0DDD58</ResultId>
-                    <StopEvent>
-
 <PreviousCall>
-    <CallAtStop>
-        <StopPointRef>8500028</StopPointRef>
-        <StopPointName>
-            <Text>Tecknau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>1</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8503300</StopPointRef>
+<StopPointName>
+<Text>Kempten</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T14:21:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:22:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:21:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:23:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
 </PreviousCall>
-
-<ThisCall>
-    <CallAtStop>
-        <StopPointRef>8502113</StopPointRef>
-        <StopPointName>
-            <Text>Aarau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:24:00Z</TimetabledTime>
-            <EstimatedTime>2016-11-10T09:24:00Z</EstimatedTime>
-        </ServiceDeparture>
-        <StopSeqNumber>2</StopSeqNumber>
-    </CallAtStop>
-</ThisCall>
-
-<OnwardCall>
-    <CallAtStop>
-        <StopPointRef>8502192</StopPointRef>
-        <StopPointName>
-            <Text>Distelberg</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>4</StopSeqNumber>
-    </CallAtStop>
-</OnwardCall>
-                    </StopEvent>
-                </StopEventResult>
-
-                <StopEventResult>
-                    <ResultId>ID-01C48EFC-863C-41B1-9841-43C85D0DDD58</ResultId>
-                    <StopEvent>
-
 <PreviousCall>
-    <CallAtStop>
-        <StopPointRef>8500028</StopPointRef>
-        <StopPointName>
-            <Text>Tecknau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>1</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8503301</StopPointRef>
+<StopPointName>
+<Text>Pfäffikon ZH</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T14:26:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:26:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:27:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:27:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
 </PreviousCall>
-
-<ThisCall>
-    <CallAtStop>
-        <StopPointRef>8502113</StopPointRef>
-        <StopPointName>
-            <Text>Aarau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:24:00Z</TimetabledTime>
-            <EstimatedTime>2016-11-10T09:24:00Z</EstimatedTime>
-        </ServiceDeparture>
-        <StopSeqNumber>2</StopSeqNumber>
-    </CallAtStop>
-</ThisCall>
-
-<OnwardCall>
-    <CallAtStop>
-        <StopPointRef>8502192</StopPointRef>
-        <StopPointName>
-            <Text>Distelberg</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>4</StopSeqNumber>
-    </CallAtStop>
-</OnwardCall>
-                    </StopEvent>
-                </StopEventResult>
-                <StopEventResult>
-                    <ResultId>ID-01C48EFC-863C-41B1-9841-43C85D0DDD58</ResultId>
-                    <StopEvent>
-
 <PreviousCall>
-    <CallAtStop>
-        <StopPointRef>8500028</StopPointRef>
-        <StopPointName>
-            <Text>Tecknau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>1</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8503302</StopPointRef>
+<StopPointName>
+<Text>Fehraltorf</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T14:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:31:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:31:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
 </PreviousCall>
-
-<ThisCall>
-    <CallAtStop>
-        <StopPointRef>8502113</StopPointRef>
-        <StopPointName>
-            <Text>Aarau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:24:00Z</TimetabledTime>
-            <EstimatedTime>2016-11-10T09:24:00Z</EstimatedTime>
-        </ServiceDeparture>
-        <StopSeqNumber>2</StopSeqNumber>
-    </CallAtStop>
-</ThisCall>
-
-<OnwardCall>
-    <CallAtStop>
-        <StopPointRef>8502192</StopPointRef>
-        <StopPointName>
-            <Text>Distelberg</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>4</StopSeqNumber>
-    </CallAtStop>
-</OnwardCall>
-                    </StopEvent>
-                </StopEventResult>
-                <StopEventResult>
-                    <ResultId>ID-01C48EFC-863C-41B1-9841-43C85D0DDD58</ResultId>
-                    <StopEvent>
-
 <PreviousCall>
-    <CallAtStop>
-        <StopPointRef>8500028</StopPointRef>
-        <StopPointName>
-            <Text>Herisau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-08-18T02:54:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>1</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8503303</StopPointRef>
+<StopPointName>
+<Text>Illnau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T14:33:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:35:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:33:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:35:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
 </PreviousCall>
-
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503305</StopPointRef>
+<StopPointName>
+<Text>Effretikon</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T14:39:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:40:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:39:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:41:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503306</StopPointRef>
+<StopPointName>
+<Text>Dietlikon</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T14:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:45:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:46:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>7</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503147</StopPointRef>
+<StopPointName>
+<Text>Stettbach</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T14:47:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:48:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:48:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:48:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>8</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503003</StopPointRef>
+<StopPointName>
+<Text>Zürich Stadelhofen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T14:52:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:52:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:53:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:53:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>9</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503000</StopPointRef>
+<StopPointName>
+<Text>Zürich HB</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T14:56:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:56:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T14:59:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T14:59:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>10</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503020</StopPointRef>
+<StopPointName>
+<Text>Zürich Hardbrücke</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:01:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:01:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:02:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:02:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>11</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503001</StopPointRef>
+<StopPointName>
+<Text>Zürich Altstetten</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:05:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:05:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:06:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:06:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>12</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503509</StopPointRef>
+<StopPointName>
+<Text>Schlieren</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:08:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:08:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:08:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:09:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>13</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503512</StopPointRef>
+<StopPointName>
+<Text>Glanzenberg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:10:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:11:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:10:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:11:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>14</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503508</StopPointRef>
+<StopPointName>
+<Text>Dietikon</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:14:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:14:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:15:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:15:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>15</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503506</StopPointRef>
+<StopPointName>
+<Text>Killwangen-Spreitenbach</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:19:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:19:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:19:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:20:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>16</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8516219</StopPointRef>
+<StopPointName>
+<Text>Mellingen Heitersberg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:24:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:24:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:25:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:25:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>17</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502106</StopPointRef>
+<StopPointName>
+<Text>Mägenwil</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:27:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:27:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:28:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:28:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>18</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502105</StopPointRef>
+<StopPointName>
+<Text>Othmarsingen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:30:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:30:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>19</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502119</StopPointRef>
+<StopPointName>
+<Text>Lenzburg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:34:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:34:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:35:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>20</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
 <ThisCall>
-    <CallAtStop>
-        <StopPointRef>8502113</StopPointRef>
-        <StopPointName>
-            <Text>Aarau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:24:00Z</TimetabledTime>
-            <EstimatedTime>2016-11-10T09:24:00Z</EstimatedTime>
-        </ServiceDeparture>
-        <StopSeqNumber>2</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:42:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:42:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>21</StopSeqNumber>
+</CallAtStop>
 </ThisCall>
-
 <OnwardCall>
-    <CallAtStop>
-        <StopPointRef>8502192</StopPointRef>
-        <StopPointName>
-            <Text>Sihlau</Text>
-            <Language>DE</Language>
-        </StopPointName>
-        <ServiceArrival>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceArrival>
-        <ServiceDeparture>
-            <TimetabledTime>2016-11-10T09:27:00Z</TimetabledTime>
-        </ServiceDeparture>
-        <StopSeqNumber>4</StopSeqNumber>
-    </CallAtStop>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:42:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:42:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>22</StopSeqNumber>
+</CallAtStop>
 </OnwardCall>
-                    </StopEvent>
-                </StopEventResult>
-            </StopEventResponse>
-        </DeliveryPayload>
-    </ServiceDelivery>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:26003::H:j16:18358</JourneyRef>
+<LineRef>odp:26003::H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>urbanRail</PtMode>
+<RailSubmode>suburbanRailway</RailSubmode>
+<Name>
+<Text>S-Bahn</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>3</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:11</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Wetzikon</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+<StopEventResult>
+<ResultId>ID-2E58F55A-C10D-41B0-8492-80C4B53EAD76</ResultId>
+<StopEvent>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503000</StopPointRef>
+<StopPointName>
+<Text>Zürich HB</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:06:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:06:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503504</StopPointRef>
+<StopPointName>
+<Text>Baden</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:21:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:21:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:22:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:22:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8500309</StopPointRef>
+<StopPointName>
+<Text>Brugg AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:30:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:32:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:32:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<ThisCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:44:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:44:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
+</ThisCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8500218</StopPointRef>
+<StopPointName>
+<Text>Olten</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:57:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:57:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:59:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:59:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8507000</StopPointRef>
+<StopPointName>
+<Text>Bern</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:26:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:26:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:59047:Y:H:j16:2178</JourneyRef>
+<LineRef>odp:59047:Y:H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>rail</PtMode>
+<RailSubmode>undefined</RailSubmode>
+<Name>
+<Text>InterRegio</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>
+</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:11</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Zürich HB</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Bern</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+<StopEventResult>
+<ResultId>ID-13F4C7D9-3A7A-438E-9DDF-5A48E99FB85A</ResultId>
+<StopEvent>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8500218</StopPointRef>
+<StopPointName>
+<Text>Olten</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:35:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<ThisCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
+</ThisCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502115</StopPointRef>
+<StopPointName>
+<Text>Wildegg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:51:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:51:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:52:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:52:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8500309</StopPointRef>
+<StopPointName>
+<Text>Brugg AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:59:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:59:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:03:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:03:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8503503</StopPointRef>
+<StopPointName>
+<Text>Turgi</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:07:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:07:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:07:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:07:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8503504</StopPointRef>
+<StopPointName>
+<Text>Baden</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:11:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:11:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:12:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:12:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8503505</StopPointRef>
+<StopPointName>
+<Text>Wettingen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:15:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:15:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>7</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:80003:Y:H:j16:4779</JourneyRef>
+<LineRef>odp:80003:Y:H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>rail</PtMode>
+<RailSubmode>undefined</RailSubmode>
+<Name>
+<Text>RegioExpress</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>
+</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:11</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Olten</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Wettingen</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+<StopEventResult>
+<ResultId>ID-64E29B09-7CB8-4A03-A0BC-D0E008619AA3</ResultId>
+<StopEvent>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502169</StopPointRef>
+<StopPointName>
+<Text>Menziken</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:10:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:10:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502168</StopPointRef>
+<StopPointName>
+<Text>Reinach AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:11:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:11:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:11:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:11:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Reinach AG Mitte</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:12:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:12:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:12:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:12:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Reinach AG Nord</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:14:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:14:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:14:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:14:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Leimbach AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:16:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:16:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:16:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:16:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Zetzwil</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:18:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:18:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:18:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:18:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Gontenschwil</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:20:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:20:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:20:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:20:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>7</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Oberkulm</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:23:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:23:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:23:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:23:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>8</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502183</StopPointRef>
+<StopPointName>
+<Text>Oberkulm Post</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:24:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:24:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:24:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:24:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>9</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502162</StopPointRef>
+<StopPointName>
+<Text>Unterkulm</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:25:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:25:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:25:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:25:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>10</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502162</StopPointRef>
+<StopPointName>
+<Text>Unterkulm Nord</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:28:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:28:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:28:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:28:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>11</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502162</StopPointRef>
+<StopPointName>
+<Text>Teufenthal AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:30:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:30:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>12</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502162</StopPointRef>
+<StopPointName>
+<Text>Bleien Liebegg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:32:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:32:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:32:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:32:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>13</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502184</StopPointRef>
+<StopPointName>
+<Text>Gränichen Oberdorf</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:33:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:33:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:33:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:33:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>14</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502184</StopPointRef>
+<StopPointName>
+<Text>Gränichen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:36:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:36:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:36:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:36:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>15</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502189</StopPointRef>
+<StopPointName>
+<Text>Gränichen Töndler</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:37:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:37:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:37:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:37:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>16</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502189</StopPointRef>
+<StopPointName>
+<Text>Suhr</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:40:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:40:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:43:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>17</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502189</StopPointRef>
+<StopPointName>
+<Text>Buchs AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>18</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<ThisCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:48:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:48:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>19</StopSeqNumber>
+</CallAtStop>
+</ThisCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:48:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:48:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>20</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:01014::H:j16:150</JourneyRef>
+<LineRef>odp:01014::H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>urbanRail</PtMode>
+<RailSubmode>suburbanRailway</RailSubmode>
+<Name>
+<Text>S-Bahn</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>14</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:96</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Menziken</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+<StopEventResult>
+<ResultId>ID-F1503C06-4F74-4536-A11D-9B5640EB2E96</ResultId>
+<StopEvent>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502199</StopPointRef>
+<StopPointName>
+<Text>Schöftland</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:27:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:27:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502177</StopPointRef>
+<StopPointName>
+<Text>Schöftland Nordweg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:28:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:28:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:28:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:28:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502177</StopPointRef>
+<StopPointName>
+<Text>Hirschthal</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:30:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:30:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502177</StopPointRef>
+<StopPointName>
+<Text>Obermuhen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:32:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:32:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:32:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:32:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502179</StopPointRef>
+<StopPointName>
+<Text>Mittelmuhen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:33:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:33:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:33:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:33:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502179</StopPointRef>
+<StopPointName>
+<Text>Muhen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:35:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:35:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502180</StopPointRef>
+<StopPointName>
+<Text>Muhen Nord</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:36:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:36:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:36:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:36:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>7</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502194</StopPointRef>
+<StopPointName>
+<Text>Oberentfelden Engelplatz</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:40:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:40:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:40:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:40:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>8</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502194</StopPointRef>
+<StopPointName>
+<Text>Oberentfelden Uerkenbrücke</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:41:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:41:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:41:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:41:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>9</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502182</StopPointRef>
+<StopPointName>
+<Text>Unterentfelden Oberdorf</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:42:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:42:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:42:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:42:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>10</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502182</StopPointRef>
+<StopPointName>
+<Text>Unterentfelden Post</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:43:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:43:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>11</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502182</StopPointRef>
+<StopPointName>
+<Text>Distelberg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>12</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502191</StopPointRef>
+<StopPointName>
+<Text>Binzenhof</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:46:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:46:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:46:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:46:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>13</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<ThisCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:49:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:49:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>14</StopSeqNumber>
+</CallAtStop>
+</ThisCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:49:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:49:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>15</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:01014::H:j16:447</JourneyRef>
+<LineRef>odp:01014::H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>urbanRail</PtMode>
+<RailSubmode>suburbanRailway</RailSubmode>
+<Name>
+<Text>S-Bahn</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>14</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:96</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Schöftland</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+<StopEventResult>
+<ResultId>ID-5373BCB2-5C6C-4647-8AF9-EBBBC44ADABA</ResultId>
+<StopEvent>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8508100</StopPointRef>
+<StopPointName>
+<Text>Langenthal</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:21:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:21:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8508101</StopPointRef>
+<StopPointName>
+<Text>Roggwil-Wynau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:24:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:24:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:24:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:25:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8508102</StopPointRef>
+<StopPointName>
+<Text>Murgenthal</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:27:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:27:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:27:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:28:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8508103</StopPointRef>
+<StopPointName>
+<Text>Rothrist</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:32:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:32:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:32:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:32:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502000</StopPointRef>
+<StopPointName>
+<Text>Aarburg-Oftringen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:35:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:36:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8500218</StopPointRef>
+<StopPointName>
+<Text>Olten</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:40:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:40:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:42:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:42:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502110</StopPointRef>
+<StopPointName>
+<Text>Dulliken</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:46:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>7</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502111</StopPointRef>
+<StopPointName>
+<Text>Däniken</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:48:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:48:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:48:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:49:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>8</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502112</StopPointRef>
+<StopPointName>
+<Text>Schönenwerd SO</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:51:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:51:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:51:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:52:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>9</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<ThisCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:57:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:57:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>10</StopSeqNumber>
+</CallAtStop>
+</ThisCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502114</StopPointRef>
+<StopPointName>
+<Text>Rupperswil</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:02:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:02:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:02:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:03:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>11</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502115</StopPointRef>
+<StopPointName>
+<Text>Wildegg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:06:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:06:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:07:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:07:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>12</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502128</StopPointRef>
+<StopPointName>
+<Text>Holderbank AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:09:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:09:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:09:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:09:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>13</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502116</StopPointRef>
+<StopPointName>
+<Text>Schinznach Bad</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:11:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:11:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:11:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:12:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>14</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8500309</StopPointRef>
+<StopPointName>
+<Text>Brugg AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:17:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:17:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:23:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:23:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>15</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8503503</StopPointRef>
+<StopPointName>
+<Text>Turgi</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:26:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:26:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>16</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:01029::H:j16:8965</JourneyRef>
+<LineRef>odp:01029::H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>urbanRail</PtMode>
+<RailSubmode>suburbanRailway</RailSubmode>
+<Name>
+<Text>S-Bahn</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>29</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:11</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Langenthal</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Turgi</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+<StopEventResult>
+<ResultId>ID-33AFBC58-4E75-420D-9484-8022D4EA181E</ResultId>
+<StopEvent>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8503503</StopPointRef>
+<StopPointName>
+<Text>Turgi</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:32:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:34:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8500309</StopPointRef>
+<StopPointName>
+<Text>Brugg AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:37:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:37:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:43:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502116</StopPointRef>
+<StopPointName>
+<Text>Schinznach Bad</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:47:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:47:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:47:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:47:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502128</StopPointRef>
+<StopPointName>
+<Text>Holderbank AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:49:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:50:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:49:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:50:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502115</StopPointRef>
+<StopPointName>
+<Text>Wildegg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:52:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:52:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:53:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:53:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502114</StopPointRef>
+<StopPointName>
+<Text>Rupperswil</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:55:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:55:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:55:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:56:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<ThisCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:00:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:00:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>7</StopSeqNumber>
+</CallAtStop>
+</ThisCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502112</StopPointRef>
+<StopPointName>
+<Text>Schönenwerd SO</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:04:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:04:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:04:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:05:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>8</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502111</StopPointRef>
+<StopPointName>
+<Text>Däniken</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:07:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:07:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:07:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:08:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>9</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502110</StopPointRef>
+<StopPointName>
+<Text>Dulliken</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:11:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:11:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:11:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:12:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>10</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8500218</StopPointRef>
+<StopPointName>
+<Text>Olten</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:15:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:15:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:16:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:16:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>11</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502000</StopPointRef>
+<StopPointName>
+<Text>Aarburg-Oftringen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:19:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:19:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:19:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:20:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>12</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8508103</StopPointRef>
+<StopPointName>
+<Text>Rothrist</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:23:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:23:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:24:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:24:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>13</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8508102</StopPointRef>
+<StopPointName>
+<Text>Murgenthal</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:28:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:28:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:28:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:28:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>14</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8508101</StopPointRef>
+<StopPointName>
+<Text>Roggwil-Wynau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:30:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:30:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:31:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>15</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8508100</StopPointRef>
+<StopPointName>
+<Text>Langenthal</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:36:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:36:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>16</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:01029::H:j16:8962</JourneyRef>
+<LineRef>odp:01029::H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>urbanRail</PtMode>
+<RailSubmode>suburbanRailway</RailSubmode>
+<Name>
+<Text>S-Bahn</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>29</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:11</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Turgi</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Langenthal</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+<StopEventResult>
+<ResultId>ID-15CE31DE-285E-4DA4-9EB0-6718B101E8DF</ResultId>
+<StopEvent>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502169</StopPointRef>
+<StopPointName>
+<Text>Menziken</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:25:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:25:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502168</StopPointRef>
+<StopPointName>
+<Text>Reinach AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:26:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:26:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:26:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:26:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Reinach AG Mitte</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:27:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:27:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:27:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:27:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Reinach AG Nord</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:29:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:29:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:29:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:29:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Leimbach AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:31:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:31:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:31:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:31:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Zetzwil</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:33:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:33:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:33:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:33:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Gontenschwil</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:35:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:35:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:35:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>7</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502176</StopPointRef>
+<StopPointName>
+<Text>Oberkulm</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:38:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:38:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:38:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:38:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>8</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502183</StopPointRef>
+<StopPointName>
+<Text>Oberkulm Post</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:39:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:39:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:39:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:39:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>9</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502162</StopPointRef>
+<StopPointName>
+<Text>Unterkulm</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:40:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:40:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:40:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:40:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>10</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502162</StopPointRef>
+<StopPointName>
+<Text>Unterkulm Nord</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:43:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:43:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>11</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502162</StopPointRef>
+<StopPointName>
+<Text>Teufenthal AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>12</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502162</StopPointRef>
+<StopPointName>
+<Text>Bleien Liebegg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:47:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:47:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:47:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:47:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>13</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502184</StopPointRef>
+<StopPointName>
+<Text>Gränichen Oberdorf</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:48:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:48:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:48:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:48:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>14</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502184</StopPointRef>
+<StopPointName>
+<Text>Gränichen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:51:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:51:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:51:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:51:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>15</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502189</StopPointRef>
+<StopPointName>
+<Text>Gränichen Töndler</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:52:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:52:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:52:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:52:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>16</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502189</StopPointRef>
+<StopPointName>
+<Text>Suhr</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:55:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:55:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:56:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:56:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>17</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502189</StopPointRef>
+<StopPointName>
+<Text>Buchs AG</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:58:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:58:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:58:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:58:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>18</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<ThisCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:01:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:01:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>19</StopSeqNumber>
+</CallAtStop>
+</ThisCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:01:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:01:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>20</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:01014::H:j16:250</JourneyRef>
+<LineRef>odp:01014::H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>urbanRail</PtMode>
+<RailSubmode>suburbanRailway</RailSubmode>
+<Name>
+<Text>S-Bahn</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>14</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:96</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Menziken</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+<StopEventResult>
+<ResultId>ID-26CC0090-314D-4BB0-B3C0-773C1D5A3E06</ResultId>
+<StopEvent>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502199</StopPointRef>
+<StopPointName>
+<Text>Schöftland</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:42:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:42:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>1</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502177</StopPointRef>
+<StopPointName>
+<Text>Schöftland Nordweg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:43:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:43:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:43:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>2</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502177</StopPointRef>
+<StopPointName>
+<Text>Hirschthal</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:45:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:45:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>3</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502177</StopPointRef>
+<StopPointName>
+<Text>Obermuhen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:47:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:47:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:47:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:47:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>4</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502179</StopPointRef>
+<StopPointName>
+<Text>Mittelmuhen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:48:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:48:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:48:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:48:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>5</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502179</StopPointRef>
+<StopPointName>
+<Text>Muhen</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:50:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:50:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:50:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:50:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>6</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502180</StopPointRef>
+<StopPointName>
+<Text>Muhen Nord</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:51:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:51:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:51:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:51:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>7</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502194</StopPointRef>
+<StopPointName>
+<Text>Oberentfelden Engelplatz</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:55:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:55:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:55:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:55:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>8</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502194</StopPointRef>
+<StopPointName>
+<Text>Oberentfelden Uerkenbrücke</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:56:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:56:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:56:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:56:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>9</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502182</StopPointRef>
+<StopPointName>
+<Text>Unterentfelden Oberdorf</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:57:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:57:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:57:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:57:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>10</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502182</StopPointRef>
+<StopPointName>
+<Text>Unterentfelden Post</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T15:58:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:58:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T15:58:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T15:58:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>11</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502182</StopPointRef>
+<StopPointName>
+<Text>Distelberg</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:00:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:00:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:00:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:00:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>12</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<PreviousCall>
+<CallAtStop>
+<StopPointRef>8502191</StopPointRef>
+<StopPointName>
+<Text>Binzenhof</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:01:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:01:00Z</EstimatedTime>
+</ServiceArrival>
+<ServiceDeparture>
+<TimetabledTime>2016-12-09T16:01:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:01:00Z</EstimatedTime>
+</ServiceDeparture>
+<StopSeqNumber>13</StopSeqNumber>
+</CallAtStop>
+</PreviousCall>
+<ThisCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:04:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:04:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>14</StopSeqNumber>
+</CallAtStop>
+</ThisCall>
+<OnwardCall>
+<CallAtStop>
+<StopPointRef>8502113</StopPointRef>
+<StopPointName>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</StopPointName>
+<ServiceArrival>
+<TimetabledTime>2016-12-09T16:04:00Z</TimetabledTime>
+<EstimatedTime>2016-12-09T16:04:00Z</EstimatedTime>
+</ServiceArrival>
+<StopSeqNumber>15</StopSeqNumber>
+</CallAtStop>
+</OnwardCall>
+<Service>
+<OperatingDayRef>2016-12-09</OperatingDayRef>
+<JourneyRef>odp:01014::H:j16:547</JourneyRef>
+<LineRef>odp:01014::H</LineRef>
+<DirectionRef>outward</DirectionRef>
+<Mode>
+<PtMode>urbanRail</PtMode>
+<RailSubmode>suburbanRailway</RailSubmode>
+<Name>
+<Text>S-Bahn</Text>
+<Language>DE</Language>
+</Name>
+</Mode>
+<PublishedLineName>
+<Text>14</Text>
+<Language>DE</Language>
+</PublishedLineName>
+<OperatorRef>odp:96</OperatorRef>
+<OriginStopPointRef>
+</OriginStopPointRef>
+<OriginText>
+<Text>Schöftland</Text>
+<Language>DE</Language>
+</OriginText>
+<DestinationStopPointRef>
+</DestinationStopPointRef>
+<DestinationText>
+<Text>Aarau</Text>
+<Language>DE</Language>
+</DestinationText>
+</Service>
+</StopEvent>
+</StopEventResult>
+</StopEventResponse>
+</DeliveryPayload>
+</ServiceDelivery>
 </Trias>
