@@ -12,8 +12,10 @@ echo "Setting up dev-environment ..."
 
 echo "Creating directories ..."
 
-mkdir -p tmp/pdepend tmp/phpcpd
-chmod go+rw tmp/pdepend tmp/phpcpd
+DIRS="vendor tmp/pdepend tmp/phpcpd tmp/phpmetrics tmp/phpunit"
+
+mkdir -p ${DIRS}
+chmod go+rw ${DIRS}
 
 echo "Composer available?"
 composer -V

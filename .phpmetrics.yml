@@ -8,13 +8,13 @@ default:
     # report and violations files
     logging:
         report:
-            xml:    ./tmp/php_metrics/production_report.xml
-            html:   ./tmp/php_metrics/production_report.html
-            csv:    ./tmp/php_metrics/production_report.csv
+            xml:    ./tmp/phpmetrics/production_report.xml
+            html:   ./tmp/phpmetrics/production_report.html
+            csv:    ./tmp/phpmetrics/production_report.csv
         violations:
-            xml:    ./tmp/php_metrics/production_violations.xml
+            xml:    ./tmp/phpmetrics/production_violations.xml
         chart:
-            bubbles: ./tmp/php_metrics/production_bubbles.svg
+            bubbles: ./tmp/phpmetrics/production_bubbles.svg
 
     # condition of failure
     failure: average.maintainabilityIndex < 50 or sum.loc > 10000

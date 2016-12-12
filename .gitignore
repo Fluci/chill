@@ -13,7 +13,7 @@ composer.lock
 
 !.htaccess
 
-# ignore direcotries with dynamic data
+# ignore directories with dynamic data
 # ignore all folders
 /www/data/*/
 /www/logs

@@ -7,18 +7,23 @@
 echo "Creating directories ..."
 
 cd www
-mkdir -p data logs tmp
-chmod go+rw data logs tmp
+
+DIRS="data logs tmp"
+
+mkdir -p ${DIRS}
+chmod go+rw ${DIRS}
 
 cd versions/latest
 
-mkdir -p cache tmp twig_cache vendor
-chmod go+rw cache tmp twig_cache vendor
+DIRS="tmp twig_cache vendor"
+
+mkdir -p ${DIRS}
+chmod go+rw ${DIRS}
 
 echo "Composer available?"
 composer -V
 
-if [ ! $? ]
+if [ $? != 0 ]
     then
         echo "composer not found." 1>&2
         exit 1
