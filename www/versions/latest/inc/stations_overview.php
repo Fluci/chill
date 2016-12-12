@@ -1,23 +1,25 @@
 <?php
 
 $stationsPath = VER_RESOURCE_ROOT.'/bahnhof.csv';
-$cachedPath = VER_CACHE.'/stations.inc';
+$cachedPath   = VER_CACHE.'/stations.inc';
 
-if (!file_exists($stationsPath)) {
+if (file_exists($stationsPath) === false) {
     return false;
 }
 
 
-// see https://opentransportdata.swiss/de/cookbook/bahnhofsliste/
-$reader = new \Chill\Util\BahnhofReader();
+// See https://opentransportdata.swiss/de/cookbook/bahnhofsliste/
+$reader   = new \Chill\Util\BahnhofReader();
 $stations = $reader->readFile($stationsPath);
 
-/////// print stuff
+// ///// Print stuff
 $template = $TWIG->loadTemplate('stations_overview.html.twig');
-$output = $template->render(array(
-    'page' => $PAGE,
-    'stations' => $stations
-));
+$output   = $template->render(
+    array(
+        'page' => $PAGE,
+        'stations' => $stations
+    )
+);
 file_put_contents($cachedPath, $output);
 echo $output;
 return true;
