@@ -3,40 +3,53 @@
 {# expects variable `stations` #}
 {% block htmlHeader%}
 <script type="text/javascript">
-
-function filterTable(sender) {
-	var stations = document.getElementById('stations');
-	var searchText = sender.value.toLowerCase();
+var lastQuery = null;
+function filterTable(searchText) {
+	if(searchText === lastQuery) {
+		return;
+	}
+	lastQuery = searchText;
 
 	var filter;
-	if (searchText === '') {filter = function() {return true};}
-	else {
-		filter = function(station){return station.toLowerCase().search(searchText);}
+
+	if (searchText === "") {
+		filter = function() {return false;};
+	} else {
+		filter = function(station){
+			return station.toLowerCase().search(searchText) !== -1;
+		}
 	}
 
 	var rows = stations.getElementsByTagName('tr');
 
-	for(var index in rows) {
-		var name = rows[index].textContent;
+	for(var i = 0; i < rows.length; i += 1) {
+		var name = rows[i].textContent;
 		if(filter(name)) {
-			rows[index].style.display = 'block';
+			rows[i].style.display = 'table-row';
+		} else {
+			rows[i].style.display = 'none';
 		}
 	}
 }
-
 </script>
 {% endblock %}
 {% block content %}
-
+<div class="stations_overview">
 <form action="" method="get">
-<input type="text" onchange="filterTable(this)" name="stop_point_ref" id="stop_point_ref" /> <input type="submit" value="&rarr;" />
+<label for="stop_point_ref">Station: </label><input type="text" 
+	onchange="filterTable(this.value.toLowerCase())" 
+	onkeydown="filterTable(this.value.toLowerCase())" 
+	onkeypress="filterTable(this.value.toLowerCase())" 
+	onkeyup="filterTable(this.value.toLowerCase())" 
+	name="stop_point_ref" id="stop_point_ref" /> <input type="submit" value="&rarr;" />
 </form>
 
 <table class="stations" id="stations">
 {% for station in stations %}
-<tr><td>
+<tr style="display: none;"><td>
 <a href="?stop_point_ref={{ station.stopPointRef }}">{{ station.stopPointName }}</a><br />
 </td></tr>
 {% endfor %}
 </table>{# stations #}
+</div>{# stations_overview #}
 {% endblock %}

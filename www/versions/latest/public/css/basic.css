@@ -15,6 +15,10 @@ body {
 	line-height: 1.6;
 }
 
+div.stations_overview {
+	padding: 0.5em;
+}
+
 div.journeys_title {
 	padding: auto;
 	text-align: center;
