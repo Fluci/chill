@@ -2,20 +2,11 @@
 
 $stationsPath = RESOURCE_ROOT.'/bahnhof.csv';
 $cachedPath = LOCAL_CACHE.'/stations.inc';
-$cacheNew = $CONFIG['debug'];
 
 if(!file_exists($stationsPath)) {
 	return false;
 }
-if(!file_exists($cachedPath)) {
-	$cacheNew = true;
-}
 
-if($cacheNew || filemtime($cachedPath) <= filemtime($stationsPath)) {
-	$cacheNew = true;
-} 
-
-if($cacheNew){
 $handle = fopen($stationsPath, "r");
 if ($handle === FALSE) {
 	return false;
@@ -24,14 +15,12 @@ if ($handle === FALSE) {
 
 // see https://opentransportdata.swiss/de/cookbook/bahnhofsliste/
 $file = file($stationsPath);
-//$row = fgetcsv($handle); // consume title row and ignore it
-//$i = 0;
 
+$enc = mb_detect_encoding($file[0]);
 
 $stations = array();
-//while (($row = fgetcsv($handle)) !== FALSE) {
 foreach($file as $line) {
-	$line = mb_convert_encoding($line, 'UTF-8');
+	$line = mb_convert_encoding($line, 'UTF-8', $enc);
 	$row = str_getcsv($line);
 	$refId = $row[0];
 
@@ -69,7 +58,6 @@ usort($stations, function($a, $b){
 fclose($handle);
 
 /////// print stuff
-
 $template = $TWIG->loadTemplate('stations_overview.html.twig');
 $output = $template->render(array(
 	'page' => $PAGE, 
@@ -77,8 +65,5 @@ $output = $template->render(array(
 ));
 file_put_contents($cachedPath, $output);
 echo $output;
-return true;
-}
-include $cachedPath;
 return true;
 ?>

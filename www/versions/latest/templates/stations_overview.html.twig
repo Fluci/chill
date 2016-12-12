@@ -4,6 +4,8 @@
 {% block htmlHeader%}
 <script type="text/javascript">
 var lastQuery = null;
+var maxShow = 200; // show first n results
+
 function filterTable(searchText) {
 	if(searchText === lastQuery) {
 		return;
@@ -13,7 +15,7 @@ function filterTable(searchText) {
 	var filter;
 
 	if (searchText === "") {
-		filter = function() {return false;};
+		filter = function() {return true;};
 	} else {
 		filter = function(station){
 			return station.toLowerCase().search(searchText) !== -1;
@@ -22,19 +24,26 @@ function filterTable(searchText) {
 
 	var rows = stations.getElementsByTagName('tr');
 
+	var showed = 0;
 	for(var i = 0; i < rows.length; i += 1) {
 		var name = rows[i].textContent;
-		if(filter(name)) {
+		if (showed < maxShow && filter(name)) {
 			rows[i].style.display = 'table-row';
+			showed += 1;
 		} else {
 			rows[i].style.display = 'none';
 		}
 	}
+	document.getElementById('showed_results').innerText = showed + " results shown";
 }
 </script>
 {% endblock %}
 {% block content %}
 <div class="stations_overview">
+{% if page.loadingDataFailed %}
+	Could not load data.
+{% endif %}
+
 <form action="" method="get">
 <label for="stop_point_ref">Station: </label><input type="text" 
 	onchange="filterTable(this.value.toLowerCase())" 
@@ -43,7 +52,7 @@ function filterTable(searchText) {
 	onkeyup="filterTable(this.value.toLowerCase())" 
 	name="stop_point_ref" id="stop_point_ref" /> <input type="submit" value="&rarr;" />
 </form>
-
+<p id="showed_results"></p>
 <table class="stations" id="stations">
 {% for station in stations %}
 <tr style="display: none;"><td>

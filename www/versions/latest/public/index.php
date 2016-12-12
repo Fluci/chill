@@ -29,12 +29,19 @@ if($stopPointRefInt <= 0 || 9999999 < $stopPointRefInt) {
 	$stopPointRef = '-1';
 }
 
-$success = false;
+$success = true;
 if($stopPointRef != '-1') {
 	$success = require_once INC_ROOT.'/timetable.php';
+	if($success) {
+		return;
+	}
 }
 
-if(!$success) {
+if($success) {
+	$PAGE['loadingDataFailed'] = false;
+	require_once INC_ROOT.'/stations_overview.php';
+} else {
+	$PAGE['loadingDataFailed'] = true;
 	require_once INC_ROOT.'/stations_overview.php';
 }
 ?>
