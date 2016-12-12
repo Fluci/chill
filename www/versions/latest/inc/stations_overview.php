@@ -7,55 +7,10 @@ if(!file_exists($stationsPath)) {
 	return false;
 }
 
-$handle = fopen($stationsPath, "r");
-if ($handle === FALSE) {
-	return false;
-}
-
 
 // see https://opentransportdata.swiss/de/cookbook/bahnhofsliste/
-$file = file($stationsPath);
-
-$enc = mb_detect_encoding($file[0]);
-
-$stations = array();
-foreach($file as $line) {
-	$line = mb_convert_encoding($line, 'UTF-8', $enc);
-	$row = str_getcsv($line);
-	$refId = $row[0];
-
-
-	$namesRaw = explode('$', $row[1]);
-	$names = array();
-
-	$lastName = array();
-	foreach($namesRaw as $name){
-		switch($name){
-		case "<1>":
-		case "<2>":
-		case "<4>":
-			$names[] = $lastName;
-			break;
-		case "<3>":
-			// ignore
-			break;
-		default:
-			$lastName = $name;
-		}
-	}
-	foreach($names as $name) {
-		$stations[] = array('stopPointRef' => $refId, 'stopPointName' => $name);
-	}
-}
-
-usort($stations, function($a, $b){
-	if($a['stopPointName'] === $b['stopPointName']) {
-		return 0;
-	}
-	return $a['stopPointName'] < $b['stopPointName'] ? -1 : 1;
-});
-
-fclose($handle);
+$reader = new \Chill\Util\BahnhofReader();
+$stations = $reader->readFile($stationsPath);
 
 /////// print stuff
 $template = $TWIG->loadTemplate('stations_overview.html.twig');
