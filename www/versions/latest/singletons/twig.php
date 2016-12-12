@@ -1,10 +1,10 @@
 <?php
-require_once COMPOSER_ROOT.'/twig/twig/lib/Twig/Autoloader.php';
+require_once VER_COMPOSER_ROOT.'/twig/twig/lib/Twig/Autoloader.php';
 
 Twig_Autoloader::register();
 
 return new Twig_Environment(
-    new Twig_Loader_Filesystem(DIR_TEMPLATES),
+    new Twig_Loader_Filesystem(VER_TEMPLATES_ROOT),
     $CONFIG['twig']['properties']
 );
 // $TWIG->getExtension('core')->setNumberFormat(2, '.', '\'');

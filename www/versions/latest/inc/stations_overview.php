@@ -1,7 +1,7 @@
 <?php
 
-$stationsPath = RESOURCE_ROOT.'/bahnhof.csv';
-$cachedPath = LOCAL_CACHE.'/stations.inc';
+$stationsPath = VER_RESOURCE_ROOT.'/bahnhof.csv';
+$cachedPath = VER_CACHE.'/stations.inc';
 
 if (!file_exists($stationsPath)) {
     return false;

@@ -54,7 +54,7 @@ if (!$use_mock) {
     $result = file_get_contents($url, false, $context);
 } else {
     // mock
-    $result = file_get_contents(RESOURCE_ROOT."/mock.txt");
+    $result = file_get_contents(VER_RESOURCE_ROOT."/mock.txt");
 }
 
 if ($result === false) {
