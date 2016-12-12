@@ -11,19 +11,22 @@ namespace Chill\Util;
 
 class Text
 {
-	private $text = null;
-	private $language = null;
+    private $text = null;
+    private $language = null;
 
-	public function __construct($text, $language) {
-		$this->text = $text;
-		$this->language = $language;
-	}
+    public function __construct($text, $language)
+    {
+        $this->text = $text;
+        $this->language = $language;
+    }
 
-	public function getText() {
-		return $this->text;
-	}
+    public function getText()
+    {
+        return $this->text;
+    }
 
-	public function getLanguage() {
-		return $this->language;
-	}
+    public function getLanguage()
+    {
+        return $this->language;
+    }
 }

@@ -2,17 +2,20 @@
 $url = 'https://api.opentransportdata.swiss/trias';
 
 $req = array(
-	'stopPointRef' => $stopPointRef,
-	'timestamp' => \Chill\Util\Util::formatZulu(), // 2016-06-27T13:34:00
-	'numberOfResults' => '10',
-	'depArrTime' => \Chill\Util\Util::formatZulu(time()-10*60)
+    'stopPointRef' => $stopPointRef,
+    'timestamp' => \Chill\Util\Util::formatZulu(), // 2016-06-27T13:34:00
+    'numberOfResults' => '10',
+    'depArrTime' => \Chill\Util\Util::formatZulu(time()-10*60)
 );
 
 $br = "\r\n";
 $header = "Content-type: text/XML".$br
-	."Authorization: ".$CONFIG['keys']['OPENTRANSPORTDATA_SWISS_API_KEY'].$br;
+    ."Authorization: ".$CONFIG['keys']['OPENTRANSPORTDATA_SWISS_API_KEY'].$br;
 
-$request = '<Trias version="1.1" xmlns="http://www.vdv.de/trias" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
+$request = '<Trias version="1.1" '
+        .'xmlns="http://www.vdv.de/trias" '
+        .'xmlns:siri="http://www.siri.org.uk/siri" '
+        .'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
     .'<ServiceRequest>'
         .'<siri:RequestTimestamp>'.$req['timestamp'].'</siri:RequestTimestamp>'
         .'<siri:RequestorRef>EPSa</siri:RequestorRef>'
@@ -48,14 +51,14 @@ $options = array(
 $context  = stream_context_create($options);
 $result;
 if (!$use_mock) {
-	$result = file_get_contents($url, false, $context);
+    $result = file_get_contents($url, false, $context);
 } else {
-	// mock
-	$result = file_get_contents(RESOURCE_ROOT."/mock.txt");
+    // mock
+    $result = file_get_contents(RESOURCE_ROOT."/mock.txt");
 }
 
-if ($result === FALSE) { 
-	return false;
+if ($result === false) {
+    return false;
 }
 
 $trias = simplexml_load_string($result);
@@ -64,15 +67,15 @@ $arrivals = $trias->ServiceDelivery->DeliveryPayload->StopEventResponse->StopEve
 
 $journeys = array();
 $journeyFactory = new \Chill\Travel\TravelFactorySimpleXml($CONFIG['timezone_datetime']);
-foreach($arrivals as $j) {
-	$journeys[] = $journeyFactory->createJourney($j);
+foreach ($arrivals as $j) {
+    $journeys[] = $journeyFactory->createJourney($j);
 }
 
-// detailed description: 
+// detailed description:
 // https://opentransportdata.swiss/de/cookbook/abfahrts-ankunftsanzeiger/
 
 $timetable = array(
-	'refreshInterval' => 30*1000 // [ms]
+    'refreshInterval' => 30*1000 // [ms]
 );
 
 
@@ -80,9 +83,8 @@ $timetable = array(
 
 $template = $TWIG->loadTemplate('timetable.html.twig');
 echo $template->render(array(
-	'page' => $PAGE, 
-	'journeys' => $journeys, 
-	'timetable' => $timetable
+    'page' => $PAGE,
+    'journeys' => $journeys,
+    'timetable' => $timetable
 ));
 return true;
-?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  *
  * @category Test
  * @package  Chill
@@ -17,7 +17,7 @@ class AutoloaderTest extends \PHPUnit_Framework_TestCase
         $loader = new Autoloader();
         $this->assertEquals($loader, $loader->addNamespace("something", "dir"));
         $this->assertEquals($loader, $loader->flushNamespaces());
-    
+
     }
     public function testLoadExistingClass()
     {
@@ -43,5 +43,3 @@ class AutoloaderTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(true); // strickt test
     }
 }
-
-?>

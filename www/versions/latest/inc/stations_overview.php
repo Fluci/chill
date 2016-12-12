@@ -3,8 +3,8 @@
 $stationsPath = RESOURCE_ROOT.'/bahnhof.csv';
 $cachedPath = LOCAL_CACHE.'/stations.inc';
 
-if(!file_exists($stationsPath)) {
-	return false;
+if (!file_exists($stationsPath)) {
+    return false;
 }
 
 
@@ -15,10 +15,9 @@ $stations = $reader->readFile($stationsPath);
 /////// print stuff
 $template = $TWIG->loadTemplate('stations_overview.html.twig');
 $output = $template->render(array(
-	'page' => $PAGE, 
-	'stations' => $stations
+    'page' => $PAGE,
+    'stations' => $stations
 ));
 file_put_contents($cachedPath, $output);
 echo $output;
 return true;
-?>

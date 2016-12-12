@@ -45,11 +45,11 @@ function filterTable(searchText) {
 {% endif %}
 
 <form action="" method="get">
-<label for="stop_point_ref">Station: </label><input type="text" 
-	onchange="filterTable(this.value.toLowerCase())" 
-	onkeydown="filterTable(this.value.toLowerCase())" 
-	onkeypress="filterTable(this.value.toLowerCase())" 
-	onkeyup="filterTable(this.value.toLowerCase())" 
+<label for="stop_point_ref">Station: </label><input type="text"
+	onchange="filterTable(this.value.toLowerCase())"
+	onkeydown="filterTable(this.value.toLowerCase())"
+	onkeypress="filterTable(this.value.toLowerCase())"
+	onkeyup="filterTable(this.value.toLowerCase())"
 	name="stop_point_ref" id="stop_point_ref" /> <input type="submit" value="&rarr;" />
 </form>
 <p id="showed_results"></p>

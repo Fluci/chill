@@ -9,20 +9,22 @@
  */
 namespace Chill\Util;
 
-class BahnhofReader {
+class BahnhofReader
+{
 
-    public function readFile($filePath) {
+    public function readFile($filePath)
+    {
         $file = file($filePath);
 
         $enc = mb_detect_encoding($file[0]);
 
         $stations = array();
-        foreach($file as $line) {
+        foreach ($file as $line) {
             $line = mb_convert_encoding($line, 'UTF-8', $enc);
 
             $stats = $this->readLine($line);
 
-            foreach($stats as $s) {
+            foreach ($stats as $s) {
                 $stations[] = $s;
             }
         }
@@ -31,46 +33,49 @@ class BahnhofReader {
         $stations = array_unique($stations, SORT_REGULAR);
 
         // sort alphabetically
-        usort($stations, function($a, $b){
-            if($a['stopPointName'] === $b['stopPointName']) {
+        $comparator = function ($lhs, $rhs) {
+            if ($lhs['stopPointName'] === $rhs['stopPointName']) {
                 return 0;
             }
-            return $a['stopPointName'] < $b['stopPointName'] ? -1 : 1;
-        });
+            return $lhs['stopPointName'] < $rhs['stopPointName'] ? -1 : 1;
+        };
+        usort($stations, $comparator);
         return $stations;
     }
 
-    public function readLine($line) {
+    public function readLine($line)
+    {
         $out = array();
         $row = str_getcsv($line);
         $refId = $row[0];
 
         $names = $this->readNamesStr($row[1]);
 
-        foreach($names as $name) {
+        foreach ($names as $name) {
             $out[] = array('stopPointRef' => $refId, 'stopPointName' => $name);
         }
         return $out;
     }
 
-    public function readNamesStr($namesStr){
+    public function readNamesStr($namesStr)
+    {
         $namesRaw = explode('$', $namesStr);
         $names = array();
 
         $lastName = null;
             // non-terminated entries (like the header) are skipped
-        foreach($namesRaw as $name){
-            switch($name){
-            case "<1>":
-            case "<2>":
-            case "<4>":
-                $names[] = $lastName;
-                break;
-            case "<3>":
-                // ignore
-                break;
-            default:
-                $lastName = $name;
+        foreach ($namesRaw as $name) {
+            switch ($name) {
+                case "<1>":
+                case "<2>":
+                case "<4>":
+                    $names[] = $lastName;
+                    break;
+                case "<3>":
+                    // ignore
+                    break;
+                default:
+                    $lastName = $name;
             }
         }
 

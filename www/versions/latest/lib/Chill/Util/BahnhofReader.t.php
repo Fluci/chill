@@ -12,7 +12,8 @@ namespace Chill\Util;
 
 class BahnhofReaderTest extends \PHPUnit_Framework_TestCase
 {
-    public function testEmptyNameStr() {
+    public function testEmptyNameStr()
+    {
         $reader = new BahnhofReader();
 
         $result = $reader->readNamesStr('');
@@ -21,11 +22,11 @@ class BahnhofReaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testNormal1() {
+    public function testNormal1()
+    {
         $reader = new BahnhofReader();
 
         $result = $reader->readLine('0000011,Grenchen$<1>');
-
 
         $expected = array(
             array('stopPointRef' => '0000011', 'stopPointName' => 'Grenchen'),
@@ -33,7 +34,8 @@ class BahnhofReaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testQuotes(){
+    public function testQuotes()
+    {
         $reader = new BahnhofReader();
 
         $result = $reader->readLine('0000006,"Feldbrunnen, St. Katharinen$<1>"');
@@ -42,7 +44,8 @@ class BahnhofReaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testDuplicate(){
+    public function testDuplicate()
+    {
         $reader = new BahnhofReader();
 
         $result = $reader->readLine('0000132,Bahn-2000-Strecke$<1>$Bahn-2000-Strecke$<2>');
@@ -53,7 +56,8 @@ class BahnhofReaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testNormal3Ignore(){
+    public function testNormal3Ignore()
+    {
         $reader = new BahnhofReader();
 
         $result = $reader->readLine('8002371,Lindau Hbf$<1>$LIND$<3>');
@@ -64,7 +68,8 @@ class BahnhofReaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function testNormal4(){
+    public function testNormal4()
+    {
         $reader = new BahnhofReader();
 
         $result = $reader->readLine('8014450,Zell (Wiesental)$<1>$Zell (W)$<4>$Zell im Wiesental$<4>$ZE$<3>');

@@ -19,9 +19,9 @@ class Autoloader
      */
     private $prefixes = array();
 
-    function __invoke($class, $file_extensions = null)
+    public function __invoke($class, $fileExtensions = null)
     {
-        $this->load($class, $file_extensions);
+        $this->load($class, $fileExtensions);
     }
 
     /**
@@ -30,7 +30,7 @@ class Autoloader
      * @param  string $prefix   The namespace prefix.
      * @param  string $base_dir A base directory for class files in the
      * namespace.
-     * @param  bool   $prepend  If true, prepend the base directory to the stack instead of appending it; this causes it to be searched first rather than last. instead of appending it; this causes it to be searched first rather than last.
+     * @param  bool   $prepend  If true, prepend the base directory to the stack
      * instead of appending it; this causes it to be searched first rather
      * than last.
      * @return void
@@ -39,7 +39,7 @@ class Autoloader
     {
         $namespace = trim($namespace, '\\') . '\\';
         $dir = rtrim($dir, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
-        
+
         // initialize the namespace prefix array
         if (isset($this->prefixes[$namespace]) === false) {
             $this->prefixes[$namespace] = array();
@@ -61,26 +61,25 @@ class Autoloader
      * @return mixed The mapped file name on success, or boolean false on
      * failure.
      */
-    public function load($class, $file_extensions = null)
+    public function load($class, $fileExtensions = null)
     {
-    	if(version_compare(PHP_VERSION, '6.0.0') >= 0) {
-        	assert($class[0] !== '\\', 'invalid leading backslash in: '.$class);
+        if (version_compare(PHP_VERSION, '6.0.0') >= 0) {
+            assert($class[0] !== '\\', 'invalid leading backslash in: '.$class);
         }
-        
+
         // the current namespace prefix
         $prefix = $class;
         // work backwards through the namespace names of the fully-qualified
         // class name to find a mapped file name
         while (false !== $pos = strrpos($prefix, '\\')) {
-
             // retain the trailing namespace separator in the prefix
             $prefix = substr($class, 0, $pos + 1);
             // the rest is the relative class name
-            $relative_class = substr($class, $pos + 1);
+            $relativeClass = substr($class, $pos + 1);
             // try to load a mapped file for the prefix and relative class
-            $mapped_file = $this->loadMappedFile($prefix, $relative_class);
-            if ($mapped_file) {
-                return $mapped_file;
+            $mappedFile = $this->loadMappedFile($prefix, $relativeClass);
+            if ($mappedFile) {
+                return $mappedFile;
             }
             // remove the trailing namespace separator for the next iteration
             // of strrpos()
@@ -97,21 +96,20 @@ class Autoloader
      * @return mixed Boolean false if no mapped file can be loaded, or the
      * name of the mapped file that was loaded.
      */
-    protected function loadMappedFile($prefix, $relative_class)
+    protected function loadMappedFile($prefix, $relativeClass)
     {
         // are there any base directories for this namespace prefix?
         if (isset($this->prefixes[$prefix]) === false) {
             return false;
         }
-    
+
         // look through base directories for this namespace prefix
-        foreach ($this->prefixes[$prefix] as $base_dir) {
-    
+        foreach ($this->prefixes[$prefix] as $baseDir) {
             // replace the namespace prefix with the base directory,
             // replace namespace separators with directory separators
             // in the relative class name, append with .php
-            $file = $base_dir
-            . str_replace('\\', '/', $relative_class)
+            $file = $baseDir
+            . str_replace('\\', '/', $relativeClass)
             . '.php';
             // if the mapped file exists, require it
             if ($this->requireFile($file)) {
@@ -119,11 +117,11 @@ class Autoloader
                 return $file;
             }
         }
-        
+
         // never found it
         return false;
     }
-    
+
     /**
      * If a file exists, require it from the file system.
      *
