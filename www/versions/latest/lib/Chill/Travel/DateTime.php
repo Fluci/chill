@@ -17,6 +17,9 @@ class DateTime
 
 	public function __construct(\DateTime $timetabled, \DateTime $estimated = null) {
 		$this->timetabled = $timetabled;
+		if($estimated == null) {
+			$estimated = $timetabled;
+		}
 		$this->estimated = $estimated;
 	}
 
@@ -28,6 +31,6 @@ class DateTime
 	}
 
 	public function getOverdue() {
-		return $this->estimated - $this->timetabled;
+		return $this->estimated->getTimestamp() - $this->timetabled->getTimestamp();
 	}
 }

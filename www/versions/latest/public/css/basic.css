@@ -40,11 +40,30 @@ div.journeys div.stopPoint:last-child {
 	border-bottom: none;
 }
 
-div.journeys p.arrival {
+div.journeys span.line {
+	font-style: italic;
+}
+
+div.journeys span.stop {
+	
+}
+
+div.journeys span.time {
 	font-weight: bold;
+}
+
+div.journeys span.overdue {
+	color: #FFCA36;
+}
+
+div.journeys p.arrival {
+	font-size: 1.3em;
 }
 
 div.journeys p.detail {
 	color: #F0F0F0;
+	display: inline;
 }
-
+table.stations td {
+	background-color: white;
+}

@@ -1,15 +1,13 @@
 <?php
 namespace config;
 
-$debug = false;
+$dynConfig = require_once DYNAMIC_CONFIG_DIR.'/config.php';
+$debug = !$dynConfig['production'];
 
-return array(
+return array_merge($dynConfig, array(
+
 'local' => array(
 	'lang_code' => 'de'
-),
-'keys' => array(
-	// https://opentransportdata.swiss/de/dev-dashboard/
-	'OPENTRANSPORTDATA_SWISS_API_KEY' => ''
 ),
 'twig' => array(
 	'properties' => array(
@@ -25,6 +23,7 @@ return array(
 'use_mock' => $debug,
 'timezone' => 'Europe/Zurich',
 'timezone_datetime' => \DateTimeZone::EUROPE
-);
+
+));
 
 ?>

@@ -8,6 +8,8 @@
             <link href="{{ css.url }}" rel="stylesheet" type="text/css" media="{{ css.media|default("all") }}" />
     {% endfor %}
 {% endblock %}
+{% block htmlHeader %}
+{% endblock %}
 {% block jsIncludes %}
   {% for js in page.jsIncludes|default([]) %}
             <script type="text/javascript" src="{{ js }}"></script>

@@ -6,7 +6,7 @@
     verbose="true"
     debug="true"
     beStrictAboutOutputDuringTests="true"
-    bootstrap="www/versions/latest/phpunit_bootstrap.php">
+    bootstrap="phpunit_bootstrap.php">
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">www/versions/latest/lib/</directory>

@@ -63,7 +63,9 @@ class Autoloader
      */
     public function load($class, $file_extensions = null)
     {
-        assert($class[0] !== '\\', 'invalid leading backslash in: '.$class);
+    	if(version_compare(PHP_VERSION, '6.0.0') >= 0) {
+        	assert($class[0] !== '\\', 'invalid leading backslash in: '.$class);
+        }
         
         // the current namespace prefix
         $prefix = $class;

@@ -19,7 +19,7 @@
 </StopPointName>
 <ServiceDeparture>
 <TimetabledTime>2016-12-09T15:04:00Z</TimetabledTime>
-<EstimatedTime>2016-12-09T15:04:00Z</EstimatedTime>
+<EstimatedTime>2016-12-09T15:05:00Z</EstimatedTime>
 </ServiceDeparture>
 <StopSeqNumber>1</StopSeqNumber>
 </CallAtStop>
@@ -159,7 +159,7 @@
 </StopPointName>
 <ServiceArrival>
 <TimetabledTime>2016-12-09T15:39:00Z</TimetabledTime>
-<EstimatedTime>2016-12-09T15:39:00Z</EstimatedTime>
+<EstimatedTime>2016-12-09T15:40:00Z</EstimatedTime>
 </ServiceArrival>
 <StopSeqNumber>9</StopSeqNumber>
 </CallAtStop>

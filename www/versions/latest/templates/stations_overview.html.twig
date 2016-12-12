@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{# expects variable `stations` #}
+{% block htmlHeader%}
+<script type="text/javascript">
+
+function filterTable(sender) {
+	var stations = document.getElementById('stations');
+	var searchText = sender.value.toLowerCase();
+
+	var filter;
+	if (searchText === '') {filter = function() {return true};}
+	else {
+		filter = function(station){return station.toLowerCase().search(searchText);}
+	}
+
+	var rows = stations.getElementsByTagName('tr');
+
+	for(var index in rows) {
+		var name = rows[index].textContent;
+		if(filter(name)) {
+			rows[index].style.display = 'block';
+		}
+	}
+}
+
+</script>
+{% endblock %}
+{% block content %}
+
+<form action="" method="get">
+<input type="text" onchange="filterTable(this)" name="stop_point_ref" id="stop_point_ref" /> <input type="submit" value="&rarr;" />
+</form>
+
+<table class="stations" id="stations">
+{% for station in stations %}
+<tr><td>
+<a href="?stop_point_ref={{ station.stopPointRef }}">{{ station.stopPointName }}</a><br />
+</td></tr>
+{% endfor %}
+</table>{# stations #}
+{% endblock %}

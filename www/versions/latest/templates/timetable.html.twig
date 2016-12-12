@@ -1,6 +1,12 @@
 {% extends "base.html.twig" %}
 
-{# expects variable `journeys` #}
+{# expects variable `journeys` with the journeys, expects variable `timetable` with settings for page #}
+
+{% block htmlHeader %}
+<script type="text/javascript">
+setTimeout(function(){ location.reload(true); }, {{ timetable.refreshInterval }});
+</script>
+{% endblock %}
 
 {% block content %}
 
@@ -21,12 +27,30 @@ This is mocked data!<br />
 	{# get last station where the train will end #}
 	{% set end = journey.OnwardCalls|last %}
 
+	{# set stopIsStart = (start.StopPointRef == stop.StopPointRef) #}
+	{# set endIsStart = (end.StopPointRef == stop.StopPointRef) #}
+	{% set stopIsStart = false %}
+	{% set endIsStart = false %}
+
+	{% set overdue = stop.ServiceArrival.overdue %}
+
 <div class="stopPoint">
-	<p class="arrival">{{ stop.ServiceArrival.TimetabledTime|date("H:i") }}</p>
+	<p class="arrival">
+		<span class="line">{{ journey.Service.EntireLineName }}</span>: 
+		<span class="stop">{{ stop.StopPointName.Text }}</span>
+		<span class="time">{{ stop.ServiceArrival.EstimatedTime|date("H:i") }}</span>
+		{% if overdue > 0 %}
+		<span class="overdue"> +{{ overdue|date("i") }} min</span>
+		{% endif %}
+	</p>
 	<p class="detail">
-	{{ start.StopPointName.Text }} {{ start.ServiceDeparture.TimetabledTime|date("m/d/Y H:i:s") }} 
-	--> {{ stop.StopPointName.Text }} 
-	--> {{ end.StopPointName.Text }} {{ end.ServiceArrival.TimetabledTime|date("m/d/Y H:i:s") }}
+		{% if not stopIsStart %}
+			<span class="stop">{{ start.StopPointName.Text }}</span> <span class="time">{{ start.ServiceDeparture.TimetabledTime|date("H:i") }}</span>
+		{% endif %}
+		{% if not (stopIsStart or endIsStart) %}&rarr; {% endif %}
+		{% if not endIsStart %}
+			<span class="stop">{{ end.StopPointName.Text }}</span> <span class="time">{{ end.ServiceArrival.TimetabledTime|date("H:i") }}</span>
+		{% endif %}
 	</p>
 </div>{# stopPoint #}
 

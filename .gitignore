@@ -7,6 +7,9 @@
 
 /tmp
 /docs
+/vendor
+
+composer.lock
 
 !.htaccess
 
@@ -19,6 +22,7 @@
 # ignore libs
 /www/versions/*/vendor
 /www/versions/*/twig_cache
+/www/versions/*/cache
 
 # ignore eclipse
 .buildpath
