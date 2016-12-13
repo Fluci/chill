@@ -1,9 +1,10 @@
-# chill
+# chill - Your personal Swiss Timetable
 
 The Swiss public transport open-sourced timetables, station information and real-time data. 
 I posed myself a challenge by building my own SBB-schedule as a website within one Saturday. 
 
 This is the result. 
+A live version can be found [here](http://chill.serena-mueller.ch).
 
 At the moment, I'm running a test instance on a spare laptop in my shared flat's living room. 
 Since I live no 60 secs from the next station, it might be interesting to know any three minutes delay, especially in winter.
@@ -19,9 +20,13 @@ All "meta"-stuff can be found in the root directory (README, tests, license, etc
 
 Everything that belongs to the server is located in `www`. 
 
-There's a `version` folder containing all versions of the website. The use of this depends on your workflow. For a small website, it's all right just to use git. The disadvantage for heavily used sites is, that at the moment of pulling the website is down. 
+There's a `version` folder containing all versions of the website. 
+The use of this depends on your workflow. 
+For a small website, it's all right just to use git. 
+The disadvantage for heavily used sites is, that at the moment of pulling the website is down. 
 
-Another workflow could be to have different versions of the site in the versions folder while `latest` is a symbolic link to the production version. Updating to the website could then be a single atomic operation of repointing the symbolic link.
+Another workflow could be to have different versions of the site in the versions folder while `latest` is a symbolic link to the production version. 
+Updating to the website could then be a single atomic operation of repointing the symbolic link.
 
 ### Directories in a version
 
@@ -38,20 +43,23 @@ Another workflow could be to have different versions of the site in the versions
 - `vendor`: Repository for "composer".
 
 ## Set up
-At some point, you need to fetch dependencies (twig, phpunit). 
+Update: Point 1. and 7. can be done by executing `./deploy.sh` on the command line. 
+In addition, `./deploy_env.sh` creates all folders for the dev-environment and downloads dev-tools like PHPUnit and linters.
+
+1. At some point, you need to fetch dependencies (twig, phpunit). 
 There are two `composer.json` files, one in the root (for unit test environment). The other one in the web server root `www/versions/latest/` (for the template engine). Run the bash command `composer update;` in the corresponding directory at some point. If in doubt, do it first.
 
-Load everything in `www` onto a server.
+2. Load everything in `www` onto a server.
 
-Point the server's root directory to `www/versions/latest/public/`.
+3. Point the server's root directory to `www/versions/latest/public/`.
 
-To access trias, you need an API key from [opentransportdata.swiss](https://opentransportdata.swiss/de/dev-dashboard). Get one.
+4. To access trias, you need an API key from [opentransportdata.swiss](https://opentransportdata.swiss/de/dev-dashboard). Get one.
 
-Copy the file `www/config/config_default.php` to `www/config/config.php` and add your key as value of `OPENTRANSPORTDATA_SWISS_API_KEY`.
+5. Copy the file `www/config/config_default.php` to `www/config/config.php` and add your key as value of `OPENTRANSPORTDATA_SWISS_API_KEY`.
 
-Place `www/config/config.php` on the server. 
+6. Place `www/config/config.php` on the server. 
 You can set `production` to `true` on the server and to `false` in your dev-environment (toggles error reporting, data-mocking, etc.).
 
-That's it. There might be some errors while generating temporary folders, but that's environment dependent and should easily be solved by creating the folders and giving them the right access rights.
+7. That's it. There might be some errors while generating temporary folders, but that's environment dependent and should easily be solved by creating the folders and giving them the right access rights.
 
 
