@@ -38,7 +38,7 @@ This is mocked data!<br />
 	<p class="arrival">
 		<span class="line">{{ journey.Service.EntireLineName }}</span>:
 		<span class="stop">{{ stop.StopPointName.Text }}</span>
-		<span class="time">{{ stop.ServiceArrival.EstimatedTime|date("H:i") }}</span>
+		<span class="time">{{ stop.ServiceArrival.TimetabledTime|date("H:i") }}</span>
 		{% if overdue > 0 %}
 		<span class="overdue"> +{{ overdue|date("i") }} min</span>
 		{% endif %}
