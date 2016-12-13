@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <parser>
+        <target>tmp/phpdoc</target>
+    </parser>
+    <!-- documentation files target -->
+    <transformer>
+        <target>docs/phpdoc</target>
+    </transformer>
+    <files>
+        <directory>www</directory>
+        <ignore>*/twig_cache/*</ignore>
+        <ignore>*/vendor/*</ignore>
+        <ignore>*.t.php</ignore>
+    </files>
+</phpdoc>

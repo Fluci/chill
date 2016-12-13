@@ -4,6 +4,7 @@
 		"phpmd/phpmd": "@stable",
 		"phpmetrics/phpmetrics": "@stable",
 		"pdepend/pdepend": "@stable",
-		"sebastian/phpcpd": "@stable"
+		"sebastian/phpcpd": "@stable",
+		"phpdocumentor/phpdocumentor": "@stable"
     }
 }
