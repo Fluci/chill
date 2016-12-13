@@ -40,14 +40,15 @@ class RequestCreatorTimetable extends RequestCreator
 
     public function getHeader()
     {
-        $lnbr   = "\r\n";
-        $header = "Content-type: text/XML".$lnbr
-            ."Authorization: ".$this->getApiKey().$lnbr;
+        $header = array(
+                   "Content-type: text/XML",
+                   "Authorization: ".$this->getApiKey(),
+                  );
 
         return $header;
     }
 
-    public function getRequestXml($stopPointRef, $depArrTime = null)
+    public function getRequestBody($stopPointRef, $depArrTime = null)
     {
         $now         = \Chill\Util\Util::formatZulu();
         $depArrTimeF = \Chill\Util\Util::formatZulu($depArrTime);
@@ -87,8 +88,8 @@ class RequestCreatorTimetable extends RequestCreator
     public function getContextOptions($stopPointRef, $depArrTime = null)
     {
 
-        $header  = $this->getHeader();
-        $request = $this->getRequestXml($stopPointRef, $depArrTime);
+        $header  = implode("\r\n", $this->getHeader())."\r\n";
+        $request = $this->getRequestBody($stopPointRef, $depArrTime);
 
         // Use key 'http' even if you send the request to https://...
         $options = array(
