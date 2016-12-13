@@ -7,7 +7,6 @@ $debug     = !$dynConfig['production'];
 return array_merge(
     $dynConfig,
     array(
-
         'local' => array(
             'lang_code' => 'de'
         ),
@@ -30,7 +29,10 @@ return array_merge(
             // Offset in timetable request
             // +10*60: only show stops after 10 min in future
             // -10*60: also show stops 10 minutes ago
-            'time_offset' => 0
-        )
+            'time_offset' => 0,
+            // Delay between two timetable requests before page reloads. [s]
+            'refresh_interval' => 30
+        ),
+        'OPENTRANSPORTDATA_SWISS_API_URL' => 'https://api.opentransportdata.swiss/trias'
     )
 );
