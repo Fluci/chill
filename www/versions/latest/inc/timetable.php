@@ -3,12 +3,12 @@ $url = 'https://api.opentransportdata.swiss/trias';
 
 $req = array(
     'stopPointRef' => $stopPointRef,
-    'timestamp' => \Chill\Util\Util::formatZulu(), // 2016-06-27T13:34:00
-    'numberOfResults' => '10',
-    'depArrTime' => \Chill\Util\Util::formatZulu(time()-10*60)
+    'timestamp' => \Chill\Util\Util::formatZulu(),
+    'numberOfResults' => $CONFIG['timetable_number_of_results'],
+    'depArrTime' => \Chill\Util\Util::formatZulu(time() + $CONFIG['timetable_time_offset'])
 );
 
-$br = "\r\n";
+$br     = "\r\n";
 $header = "Content-type: text/XML".$br
     ."Authorization: ".$CONFIG['keys']['OPENTRANSPORTDATA_SWISS_API_KEY'].$br;
 
@@ -39,7 +39,7 @@ $request = '<Trias version="1.1" '
     .'</ServiceRequest>'
 .'</Trias>';
 
-// use key 'http' even if you send the request to https://...
+// Use key 'http' even if you send the request to https://...
 $options = array(
     'http' => array(
         'header'  => $header,
@@ -48,12 +48,12 @@ $options = array(
     )
 );
 
-$context  = stream_context_create($options);
+$context = stream_context_create($options);
 $result;
-if (!$use_mock) {
+if ($use_mock === false) {
     $result = file_get_contents($url, false, $context);
 } else {
-    // mock
+    // Mock
     $result = file_get_contents(VER_RESOURCE_ROOT."/mock.txt");
 }
 

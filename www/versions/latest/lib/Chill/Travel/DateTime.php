@@ -1,15 +1,24 @@
 <?php
 /**
- * Models a timetable entry, it has a planned=timetabled entry (when the train should arrive)
- * and an estimated time (when it probably will arrive)
+ * PHP version 7
  *
  * @category Travel
  * @package  Chill
  * @author   Felice Serena <felice@serena-mueller.ch>
- * @license  MIT License
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
+
 namespace Chill\Travel;
 
+/**
+ * Models a timetable entry.
+ *
+ * It has a planned=timetabled entry (when the train should arrive)
+ * and an estimated time (when it probably will arrive).
+ *
+ * @category Travel
+ * @package Chill
+ */
 class DateTime
 {
 	private $timetabled = null;

@@ -8,7 +8,7 @@
  * @license  MIT License
  */
 
-namespace Chill\Util;
+namespace Chill\Travel;
 
 class BahnhofReaderTest extends \PHPUnit_Framework_TestCase
 {

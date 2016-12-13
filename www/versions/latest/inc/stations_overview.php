@@ -9,7 +9,7 @@ if (file_exists($stationsPath) === false) {
 
 
 // See https://opentransportdata.swiss/de/cookbook/bahnhofsliste/
-$reader   = new \Chill\Util\BahnhofReader();
+$reader   = new \Chill\Travel\BahnhofReader();
 $stations = $reader->readFile($stationsPath);
 
 // ///// Print stuff

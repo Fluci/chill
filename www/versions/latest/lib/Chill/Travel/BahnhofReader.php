@@ -7,7 +7,7 @@
  * @author   Felice Serena <felice@serena-mueller.ch>
  * @license  MIT License
  */
-namespace Chill\Util;
+namespace Chill\Travel;
 
 class BahnhofReader
 {
