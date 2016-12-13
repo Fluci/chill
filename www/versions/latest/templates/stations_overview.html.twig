@@ -3,39 +3,54 @@
 {# expects variable `stations` #}
 {% block htmlHeader%}
 <script type="text/javascript">
+{% if page.loadingDataFailed %}
+setTimeout(function(){ location.reload(true); }, 60*1000);
+{% endif %}
+
 var lastQuery = null;
-var maxShow = 200; // show first n results
+var maxShow = 300; // show first n results
 
 function filterTable(searchText) {
-	if(searchText === lastQuery) {
+	var table = document.getElementById('stations');
+	var resultInfo = document.getElementById('showed_results');
+
+	searchText = cleanSearchString(searchText);
+
+	if(sFilter === null) {
+		document.getElementById('showed_results').innerText = 'Waiting for data ...';
+	}
+
+	if(searchText == lastQuery) {
 		return;
 	}
+
 	lastQuery = searchText;
 
-	var filter;
+	var start = performance.now();
+	var insert = sFilter.getMatches(searchText, maxShow);
 
-	if (searchText === "") {
-		filter = function() {return true;};
-	} else {
-		filter = function(station){
-			return station.toLowerCase().search(searchText) !== -1;
-		}
+	var ins = [];
+	for (var i = 0; i < insert.length; i += 1) {
+		var e = insert[i];
+		ins.push('<tr><td><a href="?stop_point_ref=');
+		ins.push(e.StationID);
+		ins.push('">');
+		ins.push(e.Station);
+		ins.push('</a></td></tr>');
 	}
+	table.innerHTML = ins.join("");
+	var diff = performance.now() - start;
+	diff = " (" + diff + "ms)";
+	diff = ""; // Debug
 
-	var rows = stations.getElementsByTagName('tr');
-
-	var showed = 0;
-	for(var i = 0; i < rows.length; i += 1) {
-		var name = rows[i].textContent;
-		if (showed < maxShow && filter(name)) {
-			rows[i].style.display = 'table-row';
-			showed += 1;
-		} else {
-			rows[i].style.display = 'none';
-		}
-	}
-	document.getElementById('showed_results').innerText = showed + " results shown";
+	resultInfo.innerText = insert.length + " results shown" + diff;
 }
+var sFilter = null;
+$.get("rc/stations.csv", function(response) {
+	var csv = $.csv.toObjects(response);
+    sFilter = new StationFilter(csv);
+});
+
 </script>
 {% endblock %}
 {% block content %}
@@ -45,20 +60,16 @@ function filterTable(searchText) {
 {% endif %}
 
 <form action="" method="get">
-<label for="stop_point_ref">Station: </label><input type="text"
-	onchange="filterTable(this.value.toLowerCase())"
-	onkeydown="filterTable(this.value.toLowerCase())"
-	onkeypress="filterTable(this.value.toLowerCase())"
-	onkeyup="filterTable(this.value.toLowerCase())"
-	name="stop_point_ref" id="stop_point_ref" /> <input type="submit" value="&rarr;" />
+	<label for="stop_point_ref">Station: </label><input type="text"
+		onchange="filterTable(this.value)"
+		onkeydown="filterTable(this.value)"
+		onkeypress="filterTable(this.value)"
+		onkeyup="filterTable(this.value)"
+		name="stop_point_ref" id="stop_point_ref" />
+	<input type="submit" value="&rarr;" />
 </form>
 <p id="showed_results"></p>
 <table class="stations" id="stations">
-{% for station in stations %}
-<tr style="display: none;"><td>
-<a href="?stop_point_ref={{ station.stopPointRef }}">{{ station.stopPointName }}</a><br />
-</td></tr>
-{% endfor %}
 </table>{# stations #}
 </div>{# stations_overview #}
 {% endblock %}

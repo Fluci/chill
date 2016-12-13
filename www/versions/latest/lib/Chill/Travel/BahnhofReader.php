@@ -15,6 +15,9 @@ class BahnhofReader
     public function readFile($filePath)
     {
         $file = file($filePath);
+        if (empty($file)) {
+            return array();
+        }
 
         $enc = mb_detect_encoding($file[0]);
 

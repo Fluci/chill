@@ -8,8 +8,6 @@
             <link href="{{ css.url }}" rel="stylesheet" type="text/css" media="{{ css.media|default("all") }}" />
     {% endfor %}
 {% endblock %}
-{% block htmlHeader %}
-{% endblock %}
 {% block jsIncludes %}
   {% for js in page.jsIncludes|default([]) %}
             <script type="text/javascript" src="{{ js }}"></script>
@@ -20,6 +18,8 @@
             <script type="text/javascript">{{ js|raw }}</script>
   {% endfor %}
 {% endblock %}
+{% block htmlHeader %}
+{% endblock %}
     </head>
     <body>
 {% block body %}
@@ -27,8 +27,8 @@
   {% block all %}
     <div id="root">
       {% block root %}
-      
-      
+
+
         {% spaceless %}
           <header>
           	{% block header %}
@@ -53,15 +53,15 @@
         <footer>
           {% block footer %}{% endblock %}{# footer #}
         </footer>
-        
-        
+
+
       {% endblock %}{# root #}
     </div>{# root #}
   {% endblock %}{# all #}
-  
-  
+
+
   {% block afterContent %}{% endblock %}{# afterContent #}
-  
+
   {% block jsFoot %}
     {% for js in page.jsFootSnippets|default([]) %}
       <script type="text/javascript">{{ js|raw }}</script>
