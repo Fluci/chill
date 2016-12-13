@@ -26,7 +26,8 @@ function filterTable(searchText) {
 
 	lastQuery = searchText;
 
-	var start = performance.now();
+	// var start = performance.now();
+
 	var insert = sFilter.getMatches(searchText, maxShow);
 
 	var ins = [];
@@ -39,7 +40,8 @@ function filterTable(searchText) {
 		ins.push('</a></td></tr>');
 	}
 	table.innerHTML = ins.join("");
-	var diff = performance.now() - start;
+	var diff = "";
+	// diff = performance.now() - start;
 	diff = " (" + diff + "ms)";
 	diff = ""; // Debug
 
