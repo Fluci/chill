@@ -10,8 +10,23 @@ setTimeout(function(){ location.reload(true); }, 60*1000);
 var lastQuery = null;
 var maxShow = 300; // show first n results
 
+function makeRows(insert) {
+	var ins = [];
+	for (var i = 0; i < insert.length; i += 1) {
+		var e = insert[i];
+		ins.push('<tr><td><a href="?stop_point_ref=');
+		ins.push(e.StationID);
+		ins.push('">');
+		ins.push(e.Station);
+		ins.push('</a></td></tr>');
+	}
+	return ins.join("");
+}
+
 function filterTable(searchText) {
-	var table = document.getElementById('stations');
+	var table1 = document.getElementById('stations1');
+	var table2 = document.getElementById('stations2');
+	var table3 = document.getElementById('stations3');
 	var resultInfo = document.getElementById('showed_results');
 
 	searchText = cleanSearchString(searchText);
@@ -29,17 +44,25 @@ function filterTable(searchText) {
 	// var start = performance.now();
 
 	var insert = sFilter.getMatches(searchText, maxShow);
+	var l = insert.length;
 
-	var ins = [];
-	for (var i = 0; i < insert.length; i += 1) {
-		var e = insert[i];
-		ins.push('<tr><td><a href="?stop_point_ref=');
-		ins.push(e.StationID);
-		ins.push('">');
-		ins.push(e.Station);
-		ins.push('</a></td></tr>');
-	}
-	table.innerHTML = ins.join("");
+	var edge1 = Math.ceil(l/3);
+	var edge2 = Math.ceil((2*l)/3);
+
+	var insert1 = insert.slice(0, edge1);
+	var insert2 = insert.slice(edge1, edge2);
+	var insert3 = insert.slice(edge2, l);
+
+/**
+ * Zürich Alt: 10 results %= 1
+ * Zürich No: 11 results %= 2
+ * Zürich Rie: 17 results %= 0
+ */
+
+	table1.innerHTML = makeRows(insert1);
+	table2.innerHTML = makeRows(insert2);
+	table3.innerHTML = makeRows(insert3);
+
 	var diff = "";
 	// diff = performance.now() - start;
 	diff = " (" + diff + "ms)";
@@ -55,14 +78,18 @@ $.get("rc/stations.csv", function(response) {
 
 </script>
 {% endblock %}
+
+
 {% block content %}
-<div class="stations_overview">
+
 {% if page.loadingDataFailed %}
-	Could not load data.
+<p class="lead">Could not load data.</p>
 {% endif %}
 
+<p class="lead">Choose a station.</p>
+
 <form action="" method="get">
-	<label for="stop_point_ref">Station: </label><input type="text"
+	<label for="stop_point_ref">Station: </label> <input type="text"
 		onchange="filterTable(this.value)"
 		onkeydown="filterTable(this.value)"
 		onkeypress="filterTable(this.value)"
@@ -71,7 +98,15 @@ $.get("rc/stations.csv", function(response) {
 	<input type="submit" value="&rarr;" />
 </form>
 <p id="showed_results"></p>
-<table class="stations" id="stations">
-</table>{# stations #}
-</div>{# stations_overview #}
+<div class="row">
+	<div class="col-md-4">
+		<table id="stations1" class="stations table table-striped table-condensed table-bordered table-responsive"></table>{# stations #}
+	</div>{# col #}
+	<div class="col-md-4">
+		<table id="stations2" class="stations table table-striped table-condensed table-bordered table-responsive"></table>{# stations #}
+	</div>{# col #}
+	<div class="col-md-4">
+		<table id="stations3" class="stations table table-striped table-condensed table-bordered table-responsive"></table>{# stations #}
+	</div>{# col #}
+</div>{# row #}
 {% endblock %}

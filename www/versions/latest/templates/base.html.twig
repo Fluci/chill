@@ -1,73 +1,98 @@
 <!DOCTYPE html>
 <html lang="{{ page.langCode }}">
     <head>
-        <meta http-equiv="Content-Type" content="{{ page.contentType|default("text/html; charset=utf-8") }}" />
-        <title>{% block title %}{% endblock %}</title>
-{% block CSS %}
-    {% for css in page.stylesheets|default([]) %}
-            <link href="{{ css.url }}" rel="stylesheet" type="text/css" media="{{ css.media|default("all") }}" />
-    {% endfor %}
-{% endblock %}
-{% block jsIncludes %}
-  {% for js in page.jsIncludes|default([]) %}
-            <script type="text/javascript" src="{{ js }}"></script>
-  {% endfor %}
-{% endblock %}
-{% block jsHead %}
-  {% for js in page.jsHeadSnippets|default([]) %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{{ page.title|default("") }}{% endblock %}</title>
+
+        {% block CSS %}
+            {% for css in page.stylesheets|default([]) %}
+                <link href="{{ css.url }}" rel="stylesheet" type="text/css"{% if css.media is defined %} media="{{ css.media }}"{% endif %} />
+            {% endfor %}
+        {% endblock %}
+
+        {% block jsIncludes %}
+            {% for js in page.jsIncludes|default([]) %}
+                <script type="text/javascript" src="{{ js }}"></script>
+            {% endfor %}
+        {% endblock %}
+
+        {% block jsHead %}
+            {% for js in page.jsHeadSnippets|default([]) %}
             <script type="text/javascript">{{ js|raw }}</script>
-  {% endfor %}
-{% endblock %}
-{% block htmlHeader %}
-{% endblock %}
+            {% endfor %}
+        {% endblock %}
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        {% block htmlHeader %}
+        {% endblock %}
     </head>
     <body>
-{% block body %}
+    {% block body %}
 
-  {% block all %}
-    <div id="root">
-      {% block root %}
+        {% block all %}
 
+            <nav class="navbar navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#navbar"
+                        aria-expanded="false"
+                        aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="./">chill – Your personal Swiss Timetable</a>
+                    </div> {# navbar-header #}
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="./">Home</a></li>
+                        </ul>
+                    </div> {# navbar #}
+                    <!--/.nav-collapse -->
+                </div> {# container #}
+            </nav> {# nav #}
+            {% block contentEnv %}
+                <div class="container">
+                    <div class="jumbotron">
+                        {% if page.title is defined %}
+                            <h1>{{ page.title }}</h1>
+                        {% endif %}
+                        {% block content %}
+                            A nice body!
+                        {% endblock %}{# content #}
+                    </div> {# jumbotron #}
+                </div> {# container #}
+            {% endblock %} {# contentEnv #}
 
-        {% spaceless %}
-          <header>
-          	{% block header %}
-              {% if page.logo is defined %}
-                <a href="/">
-                  <img src="{{ page.logo.url }}" alt="{{ page.logo.alt }}" id="title_logo" />
-                </a>
-              {% endif %}
-              {% if page.title is defined %}
-                <h1>{{ page.title }}</h1>
-              {% endif %}
-            {% endblock %} {# header #}
-          </header>
-        {% endspaceless %}
+            <footer class="footer">
+                <div class="container">
+                    <p class="text-muted col-sm-3">{% block footerLeft %}{% endblock %}{# footerLeft #}</p>
+                    <p class="text-muted col-sm-6 text-center">
+                        {% block footerCenter %}<a class="btn btn-warning" href="https://github.com/Fluci/chill">Fork me on github!</a>{% endblock %}{# footerCenter #}
+                    </p>
+                    <p class="text-muted col-sm-3">{% block footerRight %}{% endblock %}{# footerRight #}</p>
+                </div>
+            </footer>
 
-        <div id="content">
-    {% block content %}
-            A nice body!
-    {% endblock %}{# content #}
-        </div>{# content #}
+        {% endblock %}{# all #}
 
-        <footer>
-          {% block footer %}{% endblock %}{# footer #}
-        </footer>
+        {% block afterAll %}{% endblock %}{# afterAll #}
 
+        {% block jsFoot %}
+            {% for js in page.jsFootSnippets|default([]) %}
+                <script type="text/javascript">{{ js|raw }}</script>
+            {% endfor %}
+        {% endblock %}{# jsFoot #}
 
-      {% endblock %}{# root #}
-    </div>{# root #}
-  {% endblock %}{# all #}
-
-
-  {% block afterContent %}{% endblock %}{# afterContent #}
-
-  {% block jsFoot %}
-    {% for js in page.jsFootSnippets|default([]) %}
-      <script type="text/javascript">{{ js|raw }}</script>
-    {% endfor %}
-  {% endblock %}{# jsFoot #}
-
-{% endblock %}{# body #}
+    {% endblock %}{# body #}
     </body>
 </html>

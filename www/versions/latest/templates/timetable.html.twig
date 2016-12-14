@@ -6,16 +6,22 @@
 <script type="text/javascript">
 setTimeout(function(){ location.reload(true); }, {{ timetable.refreshInterval }});
 </script>
+<style>
+.navbar {margin-bottom: 0;}
+</style>
 {% endblock %}
 
-{% block content %}
+{% block contentEnv %}
 
 {% if page.use_mock %}
-This is mocked data!<br />
+<p style="color: white;">
+	This is mocked data!
+</p>
 {% endif %}
 <div class="journeys_title">
 	Abfahrt Départ Partenza
 </div>
+
 <div class="journeys">
 {% for journey in journeys %}
 	{# get first station #}
@@ -34,27 +40,29 @@ This is mocked data!<br />
 
 	{% set overdue = stop.ServiceArrival.overdue %}
 
-<div class="stopPoint">
-	<p class="arrival">
-		<span class="line">{{ journey.Service.EntireLineName }}</span>:
-		<span class="stop">{{ stop.StopPointName.Text }}</span>
-		<span class="time">{{ stop.ServiceArrival.TimetabledTime|date("H:i") }}</span>
-		{% if overdue > 0 %}
-		<span class="overdue"> +{{ overdue|date("i") }} min</span>
-		{% endif %}
-	</p>
-	<p class="detail">
-		{% if not stopIsStart %}
-			<span class="stop">{{ start.StopPointName.Text }}</span> <span class="time">{{ start.ServiceDeparture.TimetabledTime|date("H:i") }}</span>
-		{% endif %}
-		{% if not (stopIsStart or endIsStart) %}&rarr; {% endif %}
-		{% if not endIsStart %}
-			<span class="stop">{{ end.StopPointName.Text }}</span> <span class="time">{{ end.ServiceArrival.TimetabledTime|date("H:i") }}</span>
-		{% endif %}
-	</p>
-</div>{# stopPoint #}
+	<div class="stopPoint">
+		<p class="arrival">
+			<span class="line">{{ journey.Service.EntireLineName }}</span>:
+			<span class="stop">{{ stop.StopPointName.Text }}</span>
+			<span class="time">{{ stop.ServiceArrival.TimetabledTime|date("H:i") }}</span>
+			{% if overdue > 0 %}
+			<span class="overdue"> +{{ overdue|date("i") }} min</span>
+			{% endif %}
+		</p>
+		<p class="detail">
+			{% if not stopIsStart %}
+				<span class="stop">{{ start.StopPointName.Text }}</span> <span class="time">{{ start.ServiceDeparture.TimetabledTime|date("H:i") }}</span>
+			{% endif %}
+			{% if not (stopIsStart or endIsStart) %}&rarr; {% endif %}
+			{% if not endIsStart %}
+				<span class="stop">{{ end.StopPointName.Text }}</span> <span class="time">{{ end.ServiceArrival.TimetabledTime|date("H:i") }}</span>
+			{% endif %}
+		</p>
+	</div>{# stopPoint #}
 
 {% endfor %}
 
 </div>{# journeys #}
-{% endblock %}
+<div class="journeys_fill_l"></div>
+<div class="journeys_fill_r"></div>
+{% endblock %} {# root #}

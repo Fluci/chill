@@ -11,8 +11,9 @@
 return array(
     'langCode' => $CONFIG['local']['lang_code'],
     'stylesheets' => array(
+        array('url' => 'e/b/css/bootstrap.min.css'),
         array(
-            'url' => 'css/basic.css',
+            'url' => 'css/base.css',
             'media' => 'all',
         ),
         array(

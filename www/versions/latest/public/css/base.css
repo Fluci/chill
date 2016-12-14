@@ -1,0 +1,139 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  font-family: "Noto Sans", sans-serif;
+  background-color: #05348B;
+  min-height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+
+.container {
+  width: auto;
+  padding: 0 15px;
+}
+
+.footer .container {
+    height: 100%;
+}
+
+.footer .text-muted {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.jumbotron {
+  background-color: #FEFEFE;
+}
+
+.footer, .navbar {
+	background-color: #FFCA36;
+}
+
+.navbar a:hover, .navbar li a:hover {
+	background-color: #EFBA36;
+}
+
+.active {
+	background-color: #EFBA36;
+}
+
+/* Custom page CSS stations overview
+-------------------------------------------------- */
+
+.stations a {
+	display: block;
+}
+
+.stations {
+    margin-bottom: 0;
+}
+
+/* Custom page CSS timetable
+-------------------------------------------------- */
+div.journeys_title {
+	padding: auto;
+	text-align: center;
+	background-color: #FFCA36;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-weight: bold;
+	font-size: 2em;
+	color: black;
+}
+
+div.journeys {
+	border: 3em solid #FFCA36;
+	border-top: 0;
+    border-bottom: 0;
+}
+
+div.journeys {
+    background-color: #05348B;
+    line-height: 1.8em;
+    color: #FEFEFE;
+}
+div.journeys_fill_l, div.journeys_fill_r {
+    background-color: #FFCA36;
+    position: absolute;
+    top: 90px;
+    bottom: 0;
+    width: 3em;
+}
+
+div.journeys_fill_l {
+    left: 0;
+}
+
+div.journeys_fill_r {
+    right: 0;
+}
+
+
+div.journeys div.stopPoint {
+	border-bottom: 1px solid #FEFEFE;
+	padding: 0.5em 1em;
+}
+
+div.journeys div.stopPoint:last-child {
+	border-bottom: none;
+}
+
+div.journeys span.line {
+	font-style: italic;
+}
+
+div.journeys span.stop {
+
+}
+
+div.journeys span.time {
+	font-weight: bold;
+}
+
+div.journeys span.overdue {
+	color: #FFCA36;
+}
+
+div.journeys p.arrival {
+	font-size: 1.3em;
+}
+
+div.journeys p.detail {
+	color: #F0F0F0;
+	display: inline;
+}
