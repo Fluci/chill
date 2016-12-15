@@ -62,7 +62,7 @@ function filterTable(searchText) {
 		return 0;
 	}
 
-	var l = insert.length-1;
+	var l = Math.min(maxShow, insert.length);
 
 	var edge1 = Math.ceil(l/3);
 	var edge2 = Math.ceil((2*l)/3);
