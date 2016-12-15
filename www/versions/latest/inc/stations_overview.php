@@ -41,9 +41,15 @@ if ($fExists === false || filemtime($cachedPath) <= filemtime($stationsPath)) {
     fclose($cacheHandle);
 }
 
+$stopPointRef = \Chill\Util\Util::methodRequest('stop_point_ref', array('GET'), '-1');
+$stopPointSearchText = \Chill\Util\Util::methodRequest('stop_point_search_text', array('GET'), '');
+
 // ///// Print stuff
+$PAGE['stopPointRef']        = $stopPointRef;
+$PAGE['stopPointSearchText'] = $stopPointSearchText;
 $PAGE['jsIncludes'][] = 'js/stations_overview.js';
-$PAGE['nav_active'] = 'stations_overview';
+$PAGE['nav_active']   = 'stations_overview';
+
 $template = $TWIG->loadTemplate('stations_overview.html.twig');
 $output   = $template->render(
     array(
