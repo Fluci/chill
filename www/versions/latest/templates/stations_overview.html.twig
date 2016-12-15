@@ -3,7 +3,7 @@
 {# expects variable `stations` #}
 {% block htmlHeader%}
 <script type="text/javascript">
-{% if page.loadingDataFailed %}
+{% if page.loadingDataFailed|default(false) %}
 setTimeout(function(){ location.reload(true); }, 60*1000);
 {% endif %}
 
@@ -40,6 +40,14 @@ function filterTable(searchText) {
 	}
 
 	lastQuery = searchText;
+
+	if (searchText === "") {
+		table1.innerHTML = '';
+		table2.innerHTML = '';
+		table3.innerHTML = '';
+		resultInfo.innerText = '';
+		return;
+	}
 
 	// var start = performance.now();
 
@@ -82,7 +90,7 @@ $.get("rc/stations.csv", function(response) {
 
 {% block content %}
 
-{% if page.loadingDataFailed %}
+{% if page.loadingDataFailed|default(false) %}
 <p class="lead">Could not load data.</p>
 {% endif %}
 

@@ -19,6 +19,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
+  padding-top: 10px;
 }
 
 .container {
@@ -28,12 +29,6 @@ body {
 
 .footer .container {
     height: 100%;
-}
-
-.footer .text-muted {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .jumbotron {
@@ -50,6 +45,10 @@ body {
 
 .active {
 	background-color: #EFBA36;
+}
+
+.icon-bar {
+    background-color: #CF9A06;
 }
 
 /* Custom page CSS stations overview

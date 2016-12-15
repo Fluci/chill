@@ -43,6 +43,7 @@ if ($fExists === false || filemtime($cachedPath) <= filemtime($stationsPath)) {
 
 // ///// Print stuff
 $PAGE['jsIncludes'][] = 'js/stations_overview.js';
+$PAGE['nav_active'] = 'stations_overview';
 $template = $TWIG->loadTemplate('stations_overview.html.twig');
 $output   = $template->render(
     array(

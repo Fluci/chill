@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{# expects variable `page` with the key `owner` #}
+
+{% block content %}
+{% set o = page.owner %}
+<p>
+	{{ o.fullname }}<br />
+	{{ o.address }}<br />
+	{{ o.phone }}<br />
+	{{ o.mail }}
+</p>
+
+{% endblock %} {# content #}

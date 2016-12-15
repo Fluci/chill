@@ -54,7 +54,9 @@
                     </div> {# navbar-header #}
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="./">Home</a></li>
+                            {% for site, url in page.nav %}
+                                <li><a href="{{ url }}"{% if page.nav_active == site %} class="active"{% endif %}>{{ page.lang[site] }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div> {# navbar #}
                     <!--/.nav-collapse -->
@@ -94,5 +96,6 @@
         {% endblock %}{# jsFoot #}
 
     {% endblock %}{# body #}
+    <script src="e/b/js/bootstrap.min.js"></script>
     </body>
 </html>
