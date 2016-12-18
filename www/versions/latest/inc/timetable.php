@@ -72,9 +72,15 @@ foreach ($arrivals as $arrival) {
     $journeys[] = $journeyFactory->createJourney($arrival);
 }
 
+$observed = '';
+if (empty($journeys) === false) {
+    $observed = $journeys[0]->getThisCall()->getStopPointName()->getText();
+}
+
 $timetable = array(
     // [ms]
-    'refreshInterval' => $CONFIG['timetable']['refresh_interval'] * 1000
+    'refreshInterval' => $CONFIG['timetable']['refresh_interval'] * 1000,
+    'observedStation' => $observed,
 );
 
 

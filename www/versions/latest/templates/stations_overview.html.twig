@@ -1,9 +1,14 @@
 {% extends "base.html.twig" %}
 
+{# expects variable `stations` #}
+
 {% set tablesCount = 4 %}
 {% set tblsColsBehavior = "col-xs-6 col-md-3" %}
 
-{# expects variable `stations` #}
+{% block title %}
+{{ parent() }} &bull; Stations
+{% endblock %}
+
 {% block htmlHeader%}
 <script type="text/javascript">
 {% if page.loadingDataFailed|default(false) %}

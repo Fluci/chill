@@ -2,6 +2,10 @@
 
 {# expects variable `journeys` with the journeys, expects variable `timetable` with settings for page #}
 
+{% block title %}
+{{ parent() }} &bull; Timetable{% if timetable.observedStation is not empty %} for {{ timetable.observedStation }}{% endif %}
+{% endblock %}
+
 {% block htmlHeader %}
 <script type="text/javascript">
 setTimeout(function(){ location.reload(true); }, {{ timetable.refreshInterval }});

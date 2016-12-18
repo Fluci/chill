@@ -2,6 +2,10 @@
 
 {# expects variable `page` with the key `owner` #}
 
+{% block title %}
+{{ parent() }} &bull; About
+{% endblock %}
+
 {% block content %}
 {% set o = page.owner %}
 <p>

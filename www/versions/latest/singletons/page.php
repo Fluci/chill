@@ -4,11 +4,14 @@
  *
  * PHP version 7
  *
- * @author  Felice Serena <felice@serena-mueller.ch>
- * @license http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @category Config
+ * @package  Chill
+ * @author   Felice Serena <felice@serena-mueller.ch>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
 return array(
+    'title' => 'chill',
     'langCode' => $CONFIG['local']['lang_code'],
     'lang' => array(
         'stations_overview' => 'Home',
