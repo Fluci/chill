@@ -6,16 +6,16 @@
 
 echo "Creating directories ..."
 
-cd www
+cd www || exit 1
 
 DIRS="data logs tmp"
 
 mkdir -p ${DIRS}
 chmod go+rw ${DIRS}
 
-cd versions/latest
+cd versions/latest || exit 1
 
-DIRS="tmp twig_cache vendor"
+DIRS="tmp vendor tmp/twig_cache tmp/cache"
 
 mkdir -p ${DIRS}
 chmod go+rw ${DIRS}

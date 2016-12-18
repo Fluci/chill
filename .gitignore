@@ -21,8 +21,7 @@ composer.lock
 
 # ignore libs
 /www/versions/*/vendor
-/www/versions/*/twig_cache
-/www/versions/*/cache
+/www/versions/*/tmp
 
 # ignore eclipse
 .buildpath
