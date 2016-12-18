@@ -23,7 +23,6 @@ return array_merge(
         'error_reporting_level' => ($debug === true ? -1 : 0),
         'use_mock' => $debug,
         'timezone' => 'Europe/Zurich',
-        'timezone_datetime' => \DateTimeZone::EUROPE,
         'timetable' => array(
             'number_of_results' => 10,
             // Offset in timetable request

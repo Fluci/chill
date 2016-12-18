@@ -9,6 +9,7 @@
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*/twig_cache/*</exclude-pattern>
     <exclude-pattern>*/tmp/*</exclude-pattern>
+    <exclude-pattern>*/public/e/*</exclude-pattern>
 
     <!-- show sniff -->
     <arg value="s"/>

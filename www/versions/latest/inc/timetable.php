@@ -66,7 +66,8 @@ $arrivals = $trias->ServiceDelivery->DeliveryPayload
 
 $journeys = array();
 
-$journeyFactory = new \Chill\Travel\TravelFactorySimpleXml($CONFIG['timezone_datetime']);
+$timezone       = new \DateTimeZone($CONFIG['timezone']);
+$journeyFactory = new \Chill\Travel\TravelFactorySimpleXml($timezone);
 
 foreach ($arrivals as $arrival) {
     $journeys[] = $journeyFactory->createJourney($arrival);
