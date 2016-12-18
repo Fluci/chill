@@ -20,6 +20,7 @@ return array(
         array('url' => 'css/base.css'),
     ),
     'jsIncludes' => array(
+        'js/base.js',
         'e/jquery-3.1.1.min.js',
         'e/jquery.csv.min.js',
     ),

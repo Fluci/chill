@@ -57,6 +57,7 @@
                     </div> {# navbar-header #}
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
+                            <li class="navbar-text text-center" id="clock_out"></li>
                             {% for site, url in page.nav %}
                                 <li><a href="{{ url }}"{% if page.nav_active == site %} class="active"{% endif %}>{{ page.lang[site] }}</a></li>
                             {% endfor %}
@@ -98,5 +99,11 @@
 
     {% endblock %}{# body #}
     <script src="e/b/js/bootstrap.min.js"></script>
+    <script>
+        var localClock = new Clock(function(newTime) {
+            document.getElementById('clock_out').innerText = newTime;
+        });
+        localClock.start();
+    </script>
     </body>
 </html>
