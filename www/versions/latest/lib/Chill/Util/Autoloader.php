@@ -1,14 +1,22 @@
 <?php
 /**
- * mainly copied from http://www.php-fig.org/psr/psr-4/examples/
+ * PHP version 5
  *
  * @category Util
  * @package  Chill
  * @author   Felice Serena <felice@serena-mueller.ch>
- * @license  MIT License
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 namespace Chill\Util;
 
+/**
+ * Autoloader to automatically load classes from Chill's library.
+ *
+ * Mainly copied from http://www.php-fig.org/psr/psr-4/examples/
+ *
+ * @category Util
+ * @package  Chill
+ */
 class Autoloader
 {
     /**
@@ -19,34 +27,42 @@ class Autoloader
      */
     private $prefixes = array();
 
-    public function __invoke($class, $fileExtensions = null)
+
+    /**
+     * Loads a class.
+     * @param  string $class The fully-qualified class name.
+     * @return void
+     */
+    public function __invoke($class)
     {
-        $this->load($class, $fileExtensions);
+        $this->load($class);
     }
 
     /**
      * Adds a base directory for a namespace prefix.
-     *
-     * @param  string $prefix   The namespace prefix.
-     * @param  string $base_dir A base directory for class files in the
-     * namespace.
-     * @param  bool   $prepend  If true, prepend the base directory to the stack
-     * instead of appending it; this causes it to be searched first rather
-     * than last.
+     * @param string $namespace The namespace prefix.
+     * @param string $dir       A base directory for class files in the namespace.
      * @return void
      */
     public function addNamespace($namespace, $dir)
     {
         $namespace = trim($namespace, '\\') . '\\';
+
         $dir = rtrim($dir, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
 
-        // initialize the namespace prefix array
+        // Initialize the namespace prefix array.
         if (isset($this->prefixes[$namespace]) === false) {
             $this->prefixes[$namespace] = array();
         }
+
         array_push($this->prefixes[$namespace], $dir);
         return $this;
     }
+
+    /**
+     * Deletes all stored namespaces.
+     * @return self For vhaining.
+     */
     public function flushNamespaces()
     {
         $this->prefixes = array();
@@ -55,87 +71,93 @@ class Autoloader
 
     /**
      * Loads the class file for a given class name.
-     *
+     * @param string $class The fully-qualified class name.
+     * @return mixed         The mapped file name on success, or boolean false on
+     *                       failure.
      * @throws noException
-     * @param  string $class The fully-qualified class name.
-     * @return mixed The mapped file name on success, or boolean false on
-     * failure.
      */
-    public function load($class, $fileExtensions = null)
+    public function load($class)
     {
         if (version_compare(PHP_VERSION, '6.0.0') >= 0) {
             assert($class[0] !== '\\', 'invalid leading backslash in: '.$class);
         }
 
-        // the current namespace prefix
+        // The current namespace prefix.
         $prefix = $class;
-        // work backwards through the namespace names of the fully-qualified
+        // Work backwards through the namespace names of the fully-qualified
         // class name to find a mapped file name
-        while (false !== $pos = strrpos($prefix, '\\')) {
-            // retain the trailing namespace separator in the prefix
+        while (false !== ($pos = strrpos($prefix, '\\'))) {
+            // Retain the trailing namespace separator in the prefix.
             $prefix = substr($class, 0, $pos + 1);
-            // the rest is the relative class name
+            // The rest is the relative class name.
             $relativeClass = substr($class, $pos + 1);
-            // try to load a mapped file for the prefix and relative class
+            // Try to load a mapped file for the prefix and relative class.
             $mappedFile = $this->loadMappedFile($prefix, $relativeClass);
-            if ($mappedFile) {
+            if ($mappedFile !== false) {
                 return $mappedFile;
             }
-            // remove the trailing namespace separator for the next iteration
+
+            // Remove the trailing namespace separator for the next iteration
             // of strrpos()
             $prefix = rtrim($prefix, '\\');
         }
-        // never found a mapped file
+
+        // Never found a mapped file.
         return false;
     }
+
     /**
      * Load the mapped file for a namespace prefix and relative class.
-     *
-     * @param  string $prefix         The namespace prefix.
-     * @param  string $relative_class The relative class name.
+     * @param string $prefix        The namespace prefix.
+     * @param string $relativeClass The relative class name.
      * @return mixed Boolean false if no mapped file can be loaded, or the
      * name of the mapped file that was loaded.
      */
     protected function loadMappedFile($prefix, $relativeClass)
     {
-        // are there any base directories for this namespace prefix?
+        // Are there any base directories for this namespace prefix?
         if (isset($this->prefixes[$prefix]) === false) {
             return false;
         }
 
-        // look through base directories for this namespace prefix
+        // Look through base directories for this namespace prefix.
         foreach ($this->prefixes[$prefix] as $baseDir) {
-            // replace the namespace prefix with the base directory,
+            // Replace the namespace prefix with the base directory,
             // replace namespace separators with directory separators
             // in the relative class name, append with .php
             $file = $baseDir
             . str_replace('\\', '/', $relativeClass)
             . '.php';
-            // if the mapped file exists, require it
-            if ($this->requireFile($file)) {
-                // yes, we're done
+            // If the mapped file exists, require it.
+            if ($this->requireFile($file) === true) {
+                // Yes, we're done
                 return $file;
             }
         }
 
-        // never found it
+        // Never found it.
         return false;
     }
 
     /**
      * If a file exists, require it from the file system.
-     *
      * @param  string $file The file to require.
      * @return bool True if the file exists, false if not.
      */
     protected function requireFile($file)
     {
-        if (file_exists($file)) {
+        if (file_exists($file) === true) {
             include $file;
             return true;
         }
+
         return false;
     }
+
+    /**
+     * Register this autoloader php's environment.
+     * @return void
+     */
     public function register()
     {
         spl_autoload_register($this, 'load');
