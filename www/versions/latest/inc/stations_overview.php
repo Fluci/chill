@@ -1,11 +1,13 @@
 <?php
 /**
- * Create cached stations.csv and deilver page.
+ * Configures and coordinates display of the station overview.
  *
- * PHP version 7
+ * PHP version 5
  *
- * @author  Felice Serena <felice@serena-mueller.ch>
- * @license http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @category Config
+ * @package  Chill
+ * @author   Felice Serena <felice@serena-mueller.ch>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
 $stationsPath = VER_RESOURCE_ROOT.'/bahnhof.csv';

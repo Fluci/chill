@@ -4,7 +4,10 @@
  *
  * PHP version 5
  *
- *
+ * @category Config
+ * @package  Chill
+ * @author   Felice Serena <felice@serena-mueller.ch>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
 
