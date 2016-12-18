@@ -10,46 +10,95 @@
 namespace Chill\Travel;
 
 /**
- * Models a station halt (when, where, etc.)
+ * Models a station halt (when, where, etc.).
+ *
+ * For original see
+ * https://opentransportdata.swiss/de/cookbook/abfahrts-ankunftsanzeiger/
  *
  * @category Travel
  * @package  Chill
  */
 class Journey
 {
-	private $previousCalls = null;
-	private $thisCall = null;
-	private $onwardCalls = null;
-	private $service = null;
+    private $previousCalls;
+    private $thisCall;
+    private $onwardCalls;
+    private $service;
 
-	public function __construct($previousCalls, $thisCall, $onwardCalls, $service) {
-		$this->previousCalls = $previousCalls;
-		$this->thisCall = $thisCall;
-		$this->onwardCalls = $onwardCalls;
-		$this->service = $service;
-	}
 
-	public function getPreviousCalls() {
-		return $this->previousCalls;
-	}
+    /**
+     * Creates a journey object that consists of the stations the vehicle passes
+     * and a description of the service responsible for the journey.
+     * @param array                  $previousCalls List of stations the
+     *                                              vehicle already was.
+     * @param Chill\Travel\StopPoint $thisCall      Observed station.
+     * @param array                  $onwardCalls   List of stations the vehicle
+     *                                              will be next.
+     * @param Chill\Travel\Service   $service       Service description of journey.
+     */
+    public function __construct(
+        array $previousCalls,
+        \Chill\Travel\StopPoint $thisCall,
+        array $onwardCalls,
+        \Chill\Travel\Service $service
+    ) {
+        $this->previousCalls = $previousCalls;
+        $this->thisCall      = $thisCall;
+        $this->onwardCalls   = $onwardCalls;
+        $this->service       = $service;
+    }
 
-	public function getPreviousCall() {
-		return $this->getPreviousCalls();
-	}
+    /**
+     * List of stations the vehicle already passed.
+     * @return array
+     */
+    public function getPreviousCalls()
+    {
+        return $this->previousCalls;
+    }
 
-	public function getThisCall() {
-		return $this->thisCall;
-	}
+    /**
+     * Alias for `getPreviousCalls` to be compatible with the xml in twig.
+     * @return array
+     */
+    public function getPreviousCall()
+    {
+        return $this->getPreviousCalls();
+    }
 
-	public function getOnwardCalls() {
-		return $this->onwardCalls;
-	}
+    /**
+     * The observed station.
+     * @return Chill\Travel\StopPoint
+     */
+    public function getThisCall()
+    {
+        return $this->thisCall;
+    }
 
-	public function getOnwardCall() {
-		return $this->getOnwardCalls();
-	}
+    /**
+     * List of stations the vehicle will pass after the observed station.
+     * @return array
+     */
+    public function getOnwardCalls()
+    {
+        return $this->onwardCalls;
+    }
 
-	public function getService() {
-		return $this->service;
-	}
+    /**
+     * Alias for `getOnwardCalls` to be compatible with the xml in twig.
+     * @return array
+     */
+    public function getOnwardCall()
+    {
+        return $this->getOnwardCalls();
+    }
+
+    /**
+     * Description of service responsible for journey.
+     * @return \Chill\Travel\Service
+     */
+    public function getService()
+    {
+        return $this->service;
+    }
 }
