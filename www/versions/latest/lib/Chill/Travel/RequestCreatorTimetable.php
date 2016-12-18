@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP version 7
+ * PHP version 5
  *
  * @category Travel
  * @package  Chill
@@ -18,23 +18,41 @@ class RequestCreatorTimetable extends RequestCreator
     private $numberOfResults = null;
 
 
+    /**
+     * Create a new object to create requests.
+     * @param string  $apiKey          API key for opentransportdata.swiss
+     * @param integer $numberOfResults How many results should be returned?
+     */
     public function __construct($apiKey, $numberOfResults = 50)
     {
         parent::__construct($apiKey);
         $this->numberOfResults = $numberOfResults;
     }
 
+    /**
+     * How many results should be requested?
+     * @return integer
+     */
     public function getNumberOfResults()
     {
         return $this->numberOfResults;
     }
 
+    /**
+     * Sets number of results that is requested.
+     * @param integer $numberOfResults [description]
+     * @return self   For chaining.
+     */
     public function setNumberOfResults($numberOfResults)
     {
         $this->numberOfResults = $numberOfResults;
         return $this;
     }
 
+    /**
+     * Creates the HTTP header as text representation.
+     * @return string
+     */
     public function getHeader()
     {
         $header = array(
@@ -45,6 +63,13 @@ class RequestCreatorTimetable extends RequestCreator
         return $header;
     }
 
+    /**
+     * Generates XML to be sent as request payload.
+     * @param  string $stopPointRef Reference of observed station.
+     * @param  [type] $depArrTime   Time at which we want to observe the station.
+     *                              If null, now() is used.
+     * @return string
+     */
     public function getRequestBody($stopPointRef, $depArrTime = null)
     {
         $now         = \Chill\Util\Util::formatZulu();
@@ -82,6 +107,13 @@ class RequestCreatorTimetable extends RequestCreator
         return $request;
     }
 
+    /**
+     * Generates the `options` array for an http request via `file_get_contents`.
+     * @param  string $stopPointRef Reference of observed station.
+     * @param  [type] $depArrTime   Time at which we want to observe the station.
+     *                              If null, now() is used.
+     * @return array
+     */
     public function getContextOptions($stopPointRef, $depArrTime = null)
     {
 
