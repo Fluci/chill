@@ -10,6 +10,9 @@
     <exclude-pattern>*/twig_cache/*</exclude-pattern>
     <exclude-pattern>*/tmp/*</exclude-pattern>
     <exclude-pattern>*/public/e/*</exclude-pattern>
+    <exclude-pattern>*.js</exclude-pattern>
+    <exclude-pattern>*.css</exclude-pattern>
+    <exclude-pattern>*.t.php</exclude-pattern>
 
     <!-- show sniff -->
     <arg value="s"/>

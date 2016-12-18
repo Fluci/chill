@@ -1,30 +1,30 @@
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  font-family: "Noto Sans", sans-serif;
-  background-color: #05348B;
-  min-height: 100%;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: "Noto Sans", sans-serif;
+    background-color: #05348B;
+    min-height: 100%;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  padding-top: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    padding-top: 10px;
 }
 
 .container {
-  width: auto;
-  padding: 0 15px;
+    width: auto;
+    padding: 0 15px;
 }
 
 .footer .container {
@@ -32,19 +32,19 @@ body {
 }
 
 .jumbotron {
-  background-color: #FEFEFE;
+    background-color: #FEFEFE;
 }
 
 .footer, .navbar {
-	background-color: #FFCA36;
+    background-color: #FFCA36;
 }
 
 .navbar a:hover, .navbar li a:hover {
-	background-color: #EFBA36;
+    background-color: #EFBA36;
 }
 
 .active {
-	background-color: #EFBA36;
+    background-color: #EFBA36;
 }
 
 .icon-bar {
@@ -55,7 +55,7 @@ body {
 -------------------------------------------------- */
 
 .stations a {
-	display: block;
+    display: block;
 }
 
 .stations_list div:first-child table tr:first-child {
@@ -67,18 +67,18 @@ body {
 /* Custom page CSS timetable
 -------------------------------------------------- */
 .journeys_title {
-	text-align: center;
-	background-color: #FFCA36;
-	height: 1.5em;
-	line-height: 1.5em;
-	font-weight: bold;
-	font-size: 2em;
-	color: black;
+    text-align: center;
+    background-color: #FFCA36;
+    height: 1.5em;
+    line-height: 1.5em;
+    font-weight: bold;
+    font-size: 2em;
+    color: black;
 }
 
 .journeys {
-	border: 3em solid #FFCA36;
-	border-top: 0;
+    border: 3em solid #FFCA36;
+    border-top: 0;
     border-bottom: 0;
 }
 
@@ -105,16 +105,16 @@ body {
 }
 
 .journeys .stopPoint {
-	border-bottom: 1px solid #FEFEFE;
-	padding: 0.5em 1em;
+    border-bottom: 1px solid #FEFEFE;
+    padding: 0.5em 1em;
 }
 
 .journeys .stopPoint:last-child {
-	border-bottom: none;
+    border-bottom: none;
 }
 
 .journeys .line {
-	font-style: italic;
+    font-style: italic;
 }
 
 .journeys .stop {
@@ -122,18 +122,18 @@ body {
 }
 
 .journeys .time {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .journeys .overdue {
-	color: #FFCA36;
+    color: #FFCA36;
 }
 
 .journeys .arrival {
-	font-size: 1.3em;
+    font-size: 1.3em;
 }
 
 .journeys .detail {
-	color: #F0F0F0;
-	display: inline;
+    color: #F0F0F0;
+    display: inline;
 }

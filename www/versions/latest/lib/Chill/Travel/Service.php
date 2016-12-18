@@ -1,6 +1,6 @@
 <?php
 /**
- * PHP version 7
+ * PHP version 5
  *
  * @category Travel
  * @package  Chill
@@ -10,7 +10,7 @@
 namespace Chill\Travel;
 
 /**
- * Models: https://opentransportdata.swiss/de/cookbook/service-vdv-431/
+ * Models a service: https://opentransportdata.swiss/de/cookbook/service-vdv-431/
  *
  * @category Travel
  * @package  Chill
@@ -32,6 +32,24 @@ class Service
     private $destStopPointRef;
     private $destText;
 
+
+    /**
+     * [__construct description]
+     * @param \DateTime          $operatingDayRef    Day of operation.
+     * @param string             $vehicleRef         Vehicle reference.
+     * @param string             $journeyRef         Journey reference.
+     * @param string             $lineRef            Line reference.
+     * @param string             $directionRef       Direction id: outwards, return
+     * @param \Chill\Travel\Mode $mode               Type of vehicle used.
+     * @param \Chill\Util\Text   $publishedLineName  Name of service in public.
+     * @param string             $operatorRef        Id of operator of line.
+     * @param string             $routeDescription   Description of route.
+     * @param string             $vias               Important stops on journey.
+     * @param string             $originStopPointRef Where the journey started.
+     * @param \Chill\Util\Text   $originText         Text description of start.
+     * @param string             $destStopPointRef   Where the journey ends.
+     * @param \Chill\Util\Text   $destText           Text description of last stop.
+     */
     public function __construct(
         \DateTime $operatingDayRef,
         $vehicleRef,
@@ -48,101 +66,183 @@ class Service
         $destStopPointRef = null,
         \Chill\Util\Text $destText = null
     ) {
-        if(!is_string($journeyRef)) {
+        if (is_string($journeyRef) === false) {
             trigger_error("journeyRef must be string", E_ERROR);
         }
 
-        if(!is_string($lineRef)) {
+        if (is_string($lineRef) === false) {
             trigger_error("lineRef must be string", E_ERROR);
         }
 
-        if(!is_string($directionRef)) {
+        if (is_string($directionRef) === false) {
             trigger_error("directionRef must be string", E_ERROR);
         }
 
-        if(!is_string($operatorRef)) {
+        if (is_string($operatorRef) === false) {
             trigger_error("operatorRef must be string", E_ERROR);
         }
 
         $this->operatingDayRef = $operatingDayRef;
-        $this->vehicleRef = $vehicleRef;
-        $this->journeyRef = $journeyRef;
-        $this->lineRef = $lineRef;
-        $this->directionRef = $directionRef;
-        $this->mode = $mode;
+        $this->vehicleRef      = $vehicleRef;
+        $this->journeyRef      = $journeyRef;
+        $this->lineRef         = $lineRef;
+        $this->directionRef    = $directionRef;
+        $this->mode            = $mode;
         $this->publishedLineName = $publishedLineName;
-        $this->operatorRef = $operatorRef;
-        $this->routeDescription = $routeDescription;
+        $this->operatorRef       = $operatorRef;
+        $this->routeDescription  = $routeDescription;
+
         $this->vias = $vias;
         $this->originStopPointRef = $originStopPointRef;
-        $this->originText = $originText;
-        $this->destStopPointRef = $destStopPointRef;
-        $this->destText = $destText;
+        $this->originText         = $originText;
+        $this->destStopPointRef   = $destStopPointRef;
+        $this->destText           = $destText;
     }
 
-    public function getOperatingDayRef() {
+    /**
+     * Returns the date when this journey takes place.
+     * @return \DateTime
+     */
+    public function getOperatingDayRef()
+    {
         return $this->operatingDayRef;
     }
 
-    public function getVehicleRef() {
+    /**
+     * Vehicle reference.
+     * @return string
+     */
+    public function getVehicleRef()
+    {
         return $this->vehicleRef;
     }
 
-    public function getJourneyRef() {
+    /**
+     * Journey reference.
+     * @return string
+     */
+    public function getJourneyRef()
+    {
         return $this->journeyRef;
     }
 
-    public function getLineRef() {
+    /**
+     * Line reference.
+     * @return string
+     */
+    public function getLineRef()
+    {
         return $this->lineRef;
     }
 
-    public function getDirectionRef() {
+    /**
+     * Direction reference.
+     * @return string
+     */
+    public function getDirectionRef()
+    {
         return $this->directionRef;
     }
 
-    public function getMode() {
+    /**
+     * Type of vehicle.
+     * @return \Chill\Travel\Mode
+     */
+    public function getMode()
+    {
         return $this->mode;
     }
 
-    public function getPublishedLineName() {
+    /**
+     * Public name of line.
+     * @return \Chill\Util\Text
+     */
+    public function getPublishedLineName()
+    {
         return $this->publishedLineName;
     }
 
-    public function getOperatorRef() {
+    /**
+     * Reference of entity that is responsible.
+     * @return string
+     */
+    public function getOperatorRef()
+    {
         return $this->operatorRef;
     }
 
-    public function getRouteDescription() {
+    /**
+     * Description of route.
+     * @return string
+     */
+    public function getRouteDescription()
+    {
         return $this->routeDescription;
     }
 
-    public function getVias() {
+    /**
+     * Important stops on journey.
+     * @return string
+     */
+    public function getVias()
+    {
         return $this->vias;
     }
 
-    public function getOriginStopPointRef() {
+    /**
+     * Reference to start point.
+     * @return string
+     */
+    public function getOriginStopPointRef()
+    {
         return $this->originStopPointRef;
     }
 
-    public function getOriginText() {
+    /**
+     * Name of start point.
+     * @return \Chill\Util\Text
+     */
+    public function getOriginText()
+    {
         return $this->originText;
     }
 
-    public function getDestinationStopPointRef() {
+    /**
+     * Reference to end point.
+     * @return string
+     */
+    public function getDestinationStopPointRef()
+    {
         return $this->destStopPointRef;
     }
 
-    public function getDestinationText() {
+    /**
+     * Name of end point.
+     * @return \Chill\Util\Text
+     */
+    public function getDestinationText()
+    {
         return $this->destText;
     }
 
-    public function getEntireLineName() {
-        $name = $this->getMode()->getName()->getText();
+    /**
+     * Concatenates name of mode and line name.
+     *
+     * Every line has public name and is realised by using a certain type of
+     * vehicle. Together they give a good idea of what type of line this is.
+     *
+     * @return string Entire name of line.
+     */
+    public function getEntireLineName()
+    {
+        $name     = $this->getMode()->getName()->getText();
         $lineName = $this->getPublishedLineName()->getText();
-        $glue = "";
-        if(!empty($name) && !empty($lineName)) {
+        $glue     = '';
+
+        if (empty($name) === false && empty($lineName) === false) {
             $glue = " ";
         }
+
         return $name.$glue.$lineName;
     }
 }
