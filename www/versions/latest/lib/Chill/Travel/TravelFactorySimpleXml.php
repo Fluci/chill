@@ -76,7 +76,7 @@ class TravelFactorySimpleXml
 
         $seqNumber = $this->val($spRoot->StopSeqNumber);
 
-        return new StopPoint($ref, $name, $arrival, $departure, $seqNumber);
+        return new StopPoint($ref, $name, $seqNumber, $arrival, $departure);
     }
 
     /**
