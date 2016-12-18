@@ -2,7 +2,7 @@
 /**
  * Entry point for website. Checks input and decides on page to display.
  *
- * PHP version 7
+ * PHP version 5
  *
  * @category Website
  * @package  Chill

@@ -1,4 +1,15 @@
 <?php
+/**
+ * Configures and coordinates display of the timetable.
+ *
+ * PHP version 5
+ *
+ * @category Config
+ * @package  Chill
+ * @author   Felice Serena <felice@serena-mueller.ch>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
+ */
+
 
 $reqCreator = new \Chill\Travel\RequestCreatorTimetable(
     $CONFIG['keys']['OPENTRANSPORTDATA_SWISS_API_KEY'],

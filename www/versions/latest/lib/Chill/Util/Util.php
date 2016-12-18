@@ -28,7 +28,11 @@ class Util
      */
     public static function methodRequest(
         $key,
-        $methods = array('COOKIE', 'POST', 'GET'),
+        $methods = array(
+                    'COOKIE',
+                    'POST',
+                    'GET',
+                ),
         $default = ''
     ) {
         foreach ($methods as $method) {

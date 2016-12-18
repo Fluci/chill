@@ -1,8 +1,8 @@
 <?php
 /**
- * Environment passed to templates
+ * Environment passed to templates.
  *
- * PHP version 7
+ * PHP version 5
  *
  * @category Config
  * @package  Chill
