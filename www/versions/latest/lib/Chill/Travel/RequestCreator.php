@@ -1,7 +1,5 @@
 <?php
 /**
- * Abstract request generator for interaction with opentransportdata.swiss
- *
  * PHP version 7
  *
  * @category Travel
@@ -9,11 +7,15 @@
  * @author   Felice Serena <felice@serena-mueller.ch>
  * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
-
 namespace Chill\Travel;
 
 /**
- * Creates requests for opentransportdata.swiss.
+ * Abstract request generator for interaction with opentransportdata.swiss
+ *
+ * PHP version 7
+ *
+ * @category Travel
+ * @package  Chill
  */
 abstract class RequestCreator
 {

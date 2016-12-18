@@ -1,24 +1,41 @@
 #!/bin/sh
 
+RETURN=0
+
 EXEC=phpdoc
 
 echo "Looking for phpdoc command ..."
 ${EXEC} -V
 
 if [ $? != 0 ]
-    then
-        echo "Looking for phpdoc in vendor/ ..."
-        EXEC="vendor/phpdocumentor/phpdocumentor/bin/phpdoc"
-        ${EXEC} -V
+then
+    echo "Looking for phpdoc in vendor/ ..."
+    EXEC="vendor/phpdocumentor/phpdocumentor/bin/phpdoc"
+    ${EXEC} -V
 fi
 
 if [ $? != 0 ]
-    then
-        echo "phpdoc not found." 1>&2
-        exit 1
+then
+    echo "phpdoc not found." 1>&2
+    RETURN=1
+else
+    ${EXEC}
+    RETURN=$?
 fi
 
-# run unit tests
-${EXEC}
 
-exit $?
+EXEC=jsdoc
+
+echo "Looking for jsdoc command ..."
+${EXEC} -v
+
+if [ $? != 0 ]
+then
+    echo "jsdoc not found." 1>&2
+    RETURN=1
+else
+    ${EXEC} -c ./jsdoc.json
+    RETURN=$?
+fi
+
+exit $RETURN

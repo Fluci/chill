@@ -1,6 +1,17 @@
 <?php
 /**
- * Models: https://opentransportdata.swiss/de/cookbook/service-vdv-431/
+ * PHP version 7
+ *
+ * @category Travel
+ * @package  Chill
+ * @author   Felice Serena <felice@serena-mueller.ch>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
+ */
+namespace Chill\Travel;
+/**
+ * Models transportation vehicle:
+ * https://opentransportdata.swiss/de/cookbook/service-vdv-431/
+ *
  * <Mode>
  *       <PtMode>urbanRail</PtMode>
  *       <RailSubmode>suburbanRailway</RailSubmode>
@@ -12,11 +23,7 @@
  *
  * @category Travel
  * @package  Chill
- * @author   Felice Serena <felice@serena-mueller.ch>
- * @license  MIT License
  */
-namespace Chill\Travel;
-
 class Mode
 {
 	const PTMODE_UNKNOWN = 'unknown';
@@ -55,5 +62,5 @@ class Mode
 	public function getName() {
 		return $this->name;
 	}
-	
+
 }

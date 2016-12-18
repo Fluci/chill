@@ -58,14 +58,15 @@ body {
 	display: block;
 }
 
-.stations {
-    margin-bottom: 0;
+.stations_list div:first-child table tr:first-child {
+    background-color: #E0E0E0;
+    border: 2px solid #A0A0A0;
 }
+
 
 /* Custom page CSS timetable
 -------------------------------------------------- */
-div.journeys_title {
-	padding: auto;
+.journeys_title {
 	text-align: center;
 	background-color: #FFCA36;
 	height: 1.5em;
@@ -75,64 +76,64 @@ div.journeys_title {
 	color: black;
 }
 
-div.journeys {
+.journeys {
 	border: 3em solid #FFCA36;
 	border-top: 0;
     border-bottom: 0;
 }
 
-div.journeys {
+.journeys {
     background-color: #05348B;
     line-height: 1.8em;
     color: #FEFEFE;
 }
-div.journeys_fill_l, div.journeys_fill_r {
+.journeys_fill_l, .journeys_fill_r {
     background-color: #FFCA36;
     position: absolute;
     top: 90px;
     bottom: 0;
     width: 3em;
+    z-index: -10;
 }
 
-div.journeys_fill_l {
+.journeys_fill_l {
     left: 0;
 }
 
-div.journeys_fill_r {
+.journeys_fill_r {
     right: 0;
 }
 
-
-div.journeys div.stopPoint {
+.journeys .stopPoint {
 	border-bottom: 1px solid #FEFEFE;
 	padding: 0.5em 1em;
 }
 
-div.journeys div.stopPoint:last-child {
+.journeys .stopPoint:last-child {
 	border-bottom: none;
 }
 
-div.journeys span.line {
+.journeys .line {
 	font-style: italic;
 }
 
-div.journeys span.stop {
+.journeys .stop {
 
 }
 
-div.journeys span.time {
+.journeys .time {
 	font-weight: bold;
 }
 
-div.journeys span.overdue {
+.journeys .overdue {
 	color: #FFCA36;
 }
 
-div.journeys p.arrival {
+.journeys .arrival {
 	font-size: 1.3em;
 }
 
-div.journeys p.detail {
+.journeys .detail {
 	color: #F0F0F0;
 	display: inline;
 }

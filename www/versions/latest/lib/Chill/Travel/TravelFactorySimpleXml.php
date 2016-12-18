@@ -1,14 +1,20 @@
 <?php
 /**
- * Converts a tree of SimpleXMLElements to internal objects.
+ * PHP version 7
  *
  * @category Travel
  * @package  Chill
  * @author   Felice Serena <felice@serena-mueller.ch>
- * @license  MIT License
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 namespace Chill\Travel;
 
+/**
+ * Converts a tree of SimpleXMLElements to internal objects.
+ *
+ * @category Travel
+ * @package  Chill
+ */
 class TravelFactorySimpleXml
 {
 	private $timezone;
@@ -16,7 +22,7 @@ class TravelFactorySimpleXml
 	public function __constructor(\DateTimeZone  $timezone) {
 		$this->timezone = new \DateTimeZone($timezone);
 	}
-	
+
 	/**
 	* Root should be a StopEventResult
 	*
@@ -48,28 +54,28 @@ class TravelFactorySimpleXml
 			$departure = $this->createDateTime($p->ServiceDeparture);
 		}
 		$seqNumber = $this->val($p->StopSeqNumber);
-		
+
 		return new StopPoint($ref, $name, $arrival, $departure, $seqNumber);
 	}
 
 	public function createText(\SimpleXMLElement $t) {
 		$text = $this->val($t->Text);
 		$lang = $this->val($t->Language);
-		
+
 		return new \Chill\Util\Text($text, $lang);
 	}
 
 	public function createDateTime(\SimpleXMLElement $t) {
-		
+
 		// mandatory field
 		$timetabled = new \DateTime($this->val($t->TimetabledTime), $this->timezone);
-		
+
 		$estimated = $this->val($t->EstimatedTime);
 
 		if($estimated !== null) {
 			$estimated = new \DateTime($estimated, $this->timezone);
 		}
-		
+
 		return new \Chill\Travel\DateTime($timetabled, $estimated);
 	}
 
@@ -77,7 +83,7 @@ class TravelFactorySimpleXml
 		$ptMode = $this->val($ser->PtMode);
 		$railSubmode = $this->val($ser->RailSubmode);
 		$name = $this->createText($ser->Name);
-		
+
 		return new \Chill\Travel\Mode($ptMode, $railSubmode, $name);
 	}
 
@@ -87,9 +93,9 @@ class TravelFactorySimpleXml
 		$journeyRef = $this->val($ser->JourneyRef);
 		$lineRef = $this->val($ser->LineRef);
 		$directionRef = $this->val($ser->DirectionRef);
-		
+
 		$mode = $this->createMode($ser->Mode);
-		
+
 		$publishedLineName = $this->createText($ser->PublishedLineName);
 		$operatorRef = $this->val($ser->OperatorRef);
 		$routeDescription = $this->val($ser->RouteDescription);
@@ -102,19 +108,19 @@ class TravelFactorySimpleXml
 		$destinationText = $this->createText($ser->DestinationText);
 
 		return new \Chill\Travel\Service(
-			$operatingDayRef, 
+			$operatingDayRef,
 			$vehicleRef,
-			$journeyRef, 
-			$lineRef, 
-			$directionRef, 
-			$mode, 
-			$publishedLineName, 
-			$operatorRef, 
+			$journeyRef,
+			$lineRef,
+			$directionRef,
+			$mode,
+			$publishedLineName,
+			$operatorRef,
 			$routeDescription,
 			$vias,
-			$originStopPointRef, 
-			$originText, 
-			$destinationStopPointRef, 
+			$originStopPointRef,
+			$originText,
+			$destinationStopPointRef,
 			$destinationText
 		);
 	}

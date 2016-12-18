@@ -1,145 +1,79 @@
 {% extends "base.html.twig" %}
 
+{% set tablesCount = 4 %}
+{% set tblsColsBehavior = "col-xs-6 col-md-3" %}
+
 {# expects variable `stations` #}
 {% block htmlHeader%}
 <script type="text/javascript">
 {% if page.loadingDataFailed|default(false) %}
 setTimeout(function(){ location.reload(true); }, 60*1000);
 {% endif %}
+var maxShow = 300;
+var statSearch = new FilterTable(maxShow);
 
-var lastQuery = null;
-var maxShow = 300; // show first n results
-
-function makeRows(insert) {
-	var ins = [];
-	for (var i = 0; i < insert.length; i += 1) {
-		var e = insert[i];
-		ins.push('<tr><td><a href="?stop_point_ref=');
-		ins.push(e.StationID);
-		ins.push('">');
-		ins.push(e.Station);
-		ins.push('</a></td></tr>');
-	}
-	return ins.join("");
-}
-
-function filterTable(searchText) {
-	var table1 = document.getElementById('stations1');
-	var table2 = document.getElementById('stations2');
-	var table3 = document.getElementById('stations3');
-	var resultInfo = document.getElementById('showed_results');
-	var stopPointRef = document.getElementById('stop_point_ref');
-
-	searchText = cleanSearchString(searchText);
-
-	if(sFilter === null) {
-		document.getElementById('showed_results').innerText = 'Waiting for data ...';
-	}
-
-	if(searchText == lastQuery) {
-		return;
-	}
-
-	lastQuery = searchText;
-
-	var insert;
-	if (searchText === "") {
-		insert = [];
-	} else {
-		insert = sFilter.getMatches(searchText, maxShow + 1);
-	}
-
-	if (insert.length == 0) {
-		table1.innerHTML = '';
-		table2.innerHTML = '';
-		table3.innerHTML = '';
-		if (searchText === '') {
-			resultInfo.innerText = '';
-		} else {
-			resultInfo.innerText = '0 rows';
-		}
-		stopPointRef.value = '-1';
-		return 0;
-	}
-
-	var l = Math.min(maxShow, insert.length);
-
-	var edge1 = Math.ceil(l/3);
-	var edge2 = Math.ceil((2*l)/3);
-
-	var insert1 = insert.slice(0, edge1);
-	var insert2 = insert.slice(edge1, edge2);
-	var insert3 = insert.slice(edge2, l);
-
-/**
- * Zürich Alt: 10 results %= 1
- * Zürich No: 11 results %= 2
- * Zürich Rie: 17 results %= 0
- */
-
-	table1.innerHTML = makeRows(insert1);
-	table2.innerHTML = makeRows(insert2);
-	table3.innerHTML = makeRows(insert3);
-
-	var diff = "";
-	// diff = performance.now() - start;
-	diff = " (" + diff + "ms)";
-	diff = ""; // Debug
-
-	if (insert.length > 0) {
-		stopPointRef.value = insert[0].StationID;
-	}
-
-	var moreRes = "";
-	if (insert.length == maxShow + 1) {
-		moreRes = " shown";
-	}
-
-	resultInfo.innerText = l + " results" + moreRes + diff;
-}
-var sFilter = null;
-$.get("rc/stations.csv", function(response) {
-	var csv = $.csv.toObjects(response);
-    sFilter = new StationFilter(csv);
-});
+$.get("./rc/stations.csv", function(response) {
+    var respStr = new String(response);
+    var csv = $.csv.toObjects(respStr);
+    var sFilter = new StationFilter(csv);
+    statSearch.setStations(sFilter);
+    statSearch.search(document.getElementById('stop_point_search_text').value);
+}, dataType='text');
 
 </script>
 {% endblock %}
 
 
+
 {% block content %}
 
 {% if page.loadingDataFailed|default(false) %}
-<p class="lead">Could not load data.</p>
+<p class="lead">Could not load the data.</p>
 {% endif %}
 
 <p class="lead">Choose a station.</p>
 
 <form action="./" method="get">
-	<label for="stop_point_ref">Station: </label>
-	<input type="text"
-		onchange="filterTable(this.value)"
-		onkeydown="filterTable(this.value)"
-		onkeypress="filterTable(this.value)"
-		onkeyup="filterTable(this.value)"
-		name="stop_point_search_text"
-		value="{{ page.stopPointSearchText }}" />
-	<input type="hidden"
-		name="stop_point_ref"
-		id="stop_point_ref"
-		value="{{ page.stopPointRef }}" />
-	<input type="submit" value="&rarr;" />
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text"
+                    onchange="statSearch.search(this.value)"
+                    onkeydown="statSearch.search(this.value)"
+                    onkeypress="statSearch.search(this.value)"
+                    onkeyup="statSearch.search(this.value)"
+                    class="form-control"
+                    name="stop_point_search_text"
+                    id="stop_point_search_text"
+                    value="{{ page.stopPointSearchText }}"
+                    placeholder="Station" />
+                <input type="hidden"
+                    name="stop_point_ref"
+                    id="stop_point_ref"
+                    value="{{ page.stopPointRef }}" />
+                <span class="input-group-btn">
+                    <input type="submit" class="btn btn-default" value="&rarr;" />
+                </span>
+            </div>
+        </div>
+    </div>
 </form>
 <p id="showed_results"></p>
-<div class="row">
-	<div class="col-md-4">
-		<table id="stations1" class="stations table table-striped table-condensed table-bordered table-responsive"></table>{# stations #}
-	</div>{# col #}
-	<div class="col-md-4">
-		<table id="stations2" class="stations table table-striped table-condensed table-bordered table-responsive"></table>{# stations #}
-	</div>{# col #}
-	<div class="col-md-4">
-		<table id="stations3" class="stations table table-striped table-condensed table-bordered table-responsive"></table>{# stations #}
-	</div>{# col #}
+<div class="row stations_list">
+    {% for i in range(0, tablesCount) %}
+    <div class="{{ tblsColsBehavior }}">
+        <table id="stations{{ i }}" class="stations table table-striped table-condensed table-bordered table-responsive"></table>{# stations #}
+    </div>{# col #}
+    {% endfor %}
 </div>{# row #}
+<script>
+var tables = [];
+for(var i = 0; i < {{ tablesCount }}; i += 1) {
+    tables[i] = document.getElementById('stations' + i);
+}
+
+statSearch.setTables(tables);
+statSearch.setStopPointRef(document.getElementById('stop_point_ref'));
+statSearch.setResultInfo(document.getElementById('showed_results'));
+</script>
 {% endblock %}

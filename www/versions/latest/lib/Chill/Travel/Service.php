@@ -1,14 +1,20 @@
 <?php
 /**
- * Models: https://opentransportdata.swiss/de/cookbook/service-vdv-431/
+ * PHP version 7
  *
  * @category Travel
  * @package  Chill
  * @author   Felice Serena <felice@serena-mueller.ch>
- * @license  MIT License
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 namespace Chill\Travel;
 
+/**
+ * Models: https://opentransportdata.swiss/de/cookbook/service-vdv-431/
+ *
+ * @category Travel
+ * @package  Chill
+ */
 class Service
 {
     private $operatingDayRef;

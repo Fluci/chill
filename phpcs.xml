@@ -32,6 +32,7 @@
         <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
         <exclude name="Squiz.Commenting.ClosingDeclarationComment.Missing"/>
         <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+        <exclude name="Squiz.Formatting.OperatorBracket.MissingBrackets"/>
         <exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound"/>
         <exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace.SpacingBeforeClose"/>
         <exclude name="Squiz.WhiteSpace.FunctionSpacing.After"/>
@@ -41,6 +42,7 @@
         <exclude name="PEAR.Commenting.ClassComment.MissingPackageTag"/>
         <exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag"/>
         <exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag"/>
+        <exclude name="PEAR.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
         <exclude name="PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
     </rule>
 </ruleset>

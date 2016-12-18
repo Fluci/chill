@@ -1,19 +1,16 @@
 <?php
 /**
- * Formulates xml requests for opentransportdata.swiss.
- *
  * PHP version 7
  *
- * @category Util
+ * @category Travel
  * @package  Chill
  * @author   Felice Serena <felice@serena-mueller.ch>
- * @license  MIT License
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
-
 namespace Chill\Travel;
 
 /**
- * Creates requests for
+ * Formulates requests for
  * https://opentransportdata.swiss/de/cookbook/abfahrts-ankunftsanzeiger/
  */
 class RequestCreatorTimetable extends RequestCreator

@@ -1,14 +1,22 @@
 <?php
 /**
- * Used to read lines from https://opentransportdata.swiss/de/cookbook/bahnhofsliste/
+ * PHP version 7
+ *
+ * @category Travel
+ * @package  Chill
+ * @author   Felice Serena <felice@serena-mueller.ch>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
+ */
+
+namespace Chill\Travel;
+
+/**
+ * Used to read lines from
+ * https://opentransportdata.swiss/de/cookbook/bahnhofsliste/
  *
  * @category Util
  * @package  Chill
- * @author   Felice Serena <felice@serena-mueller.ch>
- * @license  MIT License
  */
-namespace Chill\Travel;
-
 class BahnhofReader
 {
 

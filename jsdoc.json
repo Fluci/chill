@@ -1,0 +1,8 @@
+{
+    "source": {
+        "include": ["www/versions/latest/public/js"]
+    },
+    "opts": {
+        "destination": "./docs/jsdoc"
+    }
+}
