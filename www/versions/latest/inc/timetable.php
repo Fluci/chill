@@ -10,18 +10,31 @@
  * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-
-$reqCreator = new \Chill\Travel\RequestCreatorTimetable(
-    $CONFIG['keys']['OPENTRANSPORTDATA_SWISS_API_KEY'],
-    $CONFIG['timetable']['number_of_results']
-);
-
-$reqTime = (time() + $CONFIG['timetable']['time_offset']);
-
 $result = false;
 if ($use_mock === true) {
     // Mock
     $result = file_get_contents(VER_RESOURCE_ROOT."/mock.txt");
+}
+
+$cacher = new \Chill\Travel\TimetableRequestCacher(
+    VER_CACHE.'/timetable',
+    $CONFIG['timetable']['cache_timeout']
+);
+
+// Check cache.
+if ($result === false) {
+    $noResults = $CONFIG['timetable']['number_of_results'];
+    $result    = $cacher->loadCached($stopPointRef, $noResults);
+}
+
+// No cache, need to request data.
+if ($result === false) {
+    $reqCreator = new \Chill\Travel\RequestCreatorTimetable(
+        $CONFIG['keys']['OPENTRANSPORTDATA_SWISS_API_KEY'],
+        $CONFIG['timetable']['number_of_results']
+    );
+
+    $reqTime = (time() + $CONFIG['timetable']['time_offset']);
 }
 
 // Try curl.
@@ -41,6 +54,9 @@ if ($result === false) {
     curl_close($ch);
     if ($result === false) {
         error_log("Curl could not fetch request for timetable.");
+    } else {
+        $noOfResults = $CONFIG['timetable']['number_of_results'];
+        $cacher->store($stopPointRef, $noOfResults, $result);
     }
 }
 
@@ -62,6 +78,8 @@ if ($result === false) {
     );
     if ($result === false) {
         error_log("file_get_contents could not fetch request for timetable.");
+    } else {
+        $cacher->store($stopPointRef, $noOfResults, $result);
     }
 }
 

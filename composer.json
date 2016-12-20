@@ -1,10 +1,11 @@
 {
     "require-dev": {
         "phpunit/phpunit": "@stable",
-		"phpmd/phpmd": "@stable",
-		"phpmetrics/phpmetrics": "@stable",
-		"pdepend/pdepend": "@stable",
-		"sebastian/phpcpd": "@stable",
-		"phpdocumentor/phpdocumentor": "@stable"
+        "phpmd/phpmd": "@stable",
+        "phpmetrics/phpmetrics": "@stable",
+        "pdepend/pdepend": "@stable",
+        "sebastian/phpcpd": "@stable",
+        "phpdocumentor/phpdocumentor": "@stable",
+        "php-vfs/php-vfs": "@stable"
     }
 }

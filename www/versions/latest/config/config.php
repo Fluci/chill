@@ -27,7 +27,6 @@ return array_merge(
                 'cache' => VER_TWIG_CACHE,
                 'debug' => $debug,
                 'strict_variables' => $debug,
-                // 'number_format' => array(2, '.', '\'') // TODO
             )
         ),
         'debug' => $debug,
@@ -35,13 +34,18 @@ return array_merge(
         'use_mock' => $debug,
         'timezone' => 'Europe/Zurich',
         'timetable' => array(
-            'number_of_results' => 10,
+            'number_of_results' => 20,
             // Offset in timetable request
             // +10*60: only show stops after 10 min in future
             // -10*60: also show stops 10 minutes ago
             'time_offset' => 0,
-            // Delay between two timetable requests before page reloads. [s]
-            'refresh_interval' => 30
+            // Delay between two timetable requests before page reloads
+            // on user side
+            // [s]
+            'refresh_interval' => 30,
+            // How long is data from the cache valid?
+            // [s]
+            'cache_timeout' => 20
         ),
         'OPENTRANSPORTDATA_SWISS_API_URL' => 'https://api.opentransportdata.swiss/trias'
     )
