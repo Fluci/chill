@@ -147,6 +147,7 @@ abstract class Cacher
         // for the race condition variant (mainly for unit-tests).
         if ($res === false) {
             file_put_contents($atomPath, $payload);
+            error_log("Cacher could not write atom file atomically.");
         }
     }
 

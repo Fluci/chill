@@ -2,20 +2,20 @@
 /**
  * PHP version 5
  *
- * @category Travel
+ * @category Config
  * @package  Chill
  * @author   Felice Serena <felice@serena-mueller.ch>
  * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-namespace Chill\Travel;
+namespace Chill\Timetable;
 
 /**
  * Knows which cache atoms to choose when fetching from cache.
- * @category Travel
+ * @category Config
  * @package  Chill
  */
-class TimetableRequestCacher extends \Chill\Util\Cacher
+class RequestCacher extends \Chill\Util\Cacher
 {
 
 

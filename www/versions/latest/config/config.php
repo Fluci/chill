@@ -34,11 +34,19 @@ return array_merge(
         'use_mock' => $debug,
         'timezone' => 'Europe/Zurich',
         'timetable' => array(
-            'number_of_results' => 20,
+            // How much results should be fetched from
+            // opentransportdata in a request?
+            'number_of_results_fetch' => 25,
+            // How many results should be shown?
+            'number_of_results_show' => 20,
             // Offset in timetable request
             // +10*60: only show stops after 10 min in future
             // -10*60: also show stops 10 minutes ago
-            'time_offset' => 0,
+            'time_offset_fetch' => -5*60,
+            // Offset for displayed journeys, filters request and only shows
+            // journeys newer than `now() + offset`.
+            // Unit: seconds.
+            'time_offset_show' => -2*60,
             // Delay between two timetable requests before page reloads
             // on user side
             // [s]

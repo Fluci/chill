@@ -10,7 +10,8 @@
 namespace Chill\Travel;
 
 /**
- * Abstract request generator for interaction with opentransportdata.swiss
+ * Abstract request generator for interaction with opentransportdata.swiss.
+ * Provides all "static" (not frequently changing) data to generate a request.
  *
  * Get an API key from
  * https://opentransportdata.swiss/de/dev-dashboard/
@@ -20,16 +21,39 @@ namespace Chill\Travel;
  */
 abstract class RequestCreator
 {
+    private $apiUrl = null;
     private $apiKey = null;
 
 
     /**
      * Initialize RequestReader with apiKey.
+     * @param string $apiUrl API url to access opentransportdata
      * @param string $apiKey API key to access opentransportdata
      */
-    public function __construct($apiKey)
+    public function __construct($apiUrl, $apiKey)
     {
+        $this->apiUrl = $apiUrl;
         $this->apiKey = $apiKey;
+    }
+
+    /**
+     * Read the set API url.
+     * @return string
+     */
+    public function getApiUrl()
+    {
+        return $this->apiUrl;
+    }
+
+    /**
+     * Set a new API url.
+     * @param string $apiUrl Url to acces API of opentransportdata.swiss
+     * @return self For chaining.
+     */
+    public function setApiUrl($apiUrl)
+    {
+        $this->apiUrl = $apiUrl;
+        return $this;
     }
 
     /**

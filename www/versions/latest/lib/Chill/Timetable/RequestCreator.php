@@ -2,31 +2,39 @@
 /**
  * PHP version 5
  *
- * @category Travel
+ * @category Config
  * @package  Chill
  * @author   Felice Serena <felice@serena-mueller.ch>
  * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
-namespace Chill\Travel;
+namespace Chill\Timetable;
 
 /**
  * Formulates requests for
  * https://opentransportdata.swiss/de/cookbook/abfahrts-ankunftsanzeiger/
  */
-class RequestCreatorTimetable extends RequestCreator
+class RequestCreator extends \Chill\Travel\RequestCreator
 {
-    private $numberOfResults = null;
+    private $numberOfResults  = null;
+    private $depArrTimeOffset = null;
 
 
     /**
      * Create a new object to create requests.
-     * @param string  $apiKey          API key for opentransportdata.swiss
-     * @param integer $numberOfResults How many results should be returned?
+     * @param string  $apiUrl           API url to access opentransportdata
+     * @param string  $apiKey           API key for opentransportdata.swiss
+     * @param integer $numberOfResults  How many results should be returned?
+     * @param integer $depArrTimeOffset Offset from now to get observed time.
      */
-    public function __construct($apiKey, $numberOfResults = 50)
-    {
-        parent::__construct($apiKey);
-        $this->numberOfResults = $numberOfResults;
+    public function __construct(
+        $apiUrl,
+        $apiKey,
+        $numberOfResults = 50,
+        $depArrTimeOffset = 0
+    ) {
+        parent::__construct($apiUrl, $apiKey);
+        $this->numberOfResults  = $numberOfResults;
+        $this->depArrTimeOffset = $depArrTimeOffset;
     }
 
     /**
@@ -64,16 +72,23 @@ class RequestCreatorTimetable extends RequestCreator
     }
 
     /**
+     * Observed departure/arrival time.
+     * @return integer Unix time stamp.
+     */
+    private function getDepArrTime()
+    {
+        return time() + $this->depArrTimeOffset;
+    }
+
+    /**
      * Generates XML to be sent as request payload.
      * @param  string $stopPointRef Reference of observed station.
-     * @param  [type] $depArrTime   Time at which we want to observe the station.
-     *                              If null, now() is used.
      * @return string
      */
-    public function getRequestBody($stopPointRef, $depArrTime = null)
+    public function getRequestBody($stopPointRef)
     {
         $now         = \Chill\Util\Util::formatZulu();
-        $depArrTimeF = \Chill\Util\Util::formatZulu($depArrTime);
+        $depArrTimeF = \Chill\Util\Util::formatZulu($this->getDepArrTime());
 
         $request = '<Trias version="1.1" '
                 .'xmlns="http://www.vdv.de/trias" '
@@ -110,15 +125,13 @@ class RequestCreatorTimetable extends RequestCreator
     /**
      * Generates the `options` array for an http request via `file_get_contents`.
      * @param  string $stopPointRef Reference of observed station.
-     * @param  [type] $depArrTime   Time at which we want to observe the station.
-     *                              If null, now() is used.
      * @return array
      */
-    public function getContextOptions($stopPointRef, $depArrTime = null)
+    public function getContextOptions($stopPointRef)
     {
 
         $header  = implode("\r\n", $this->getHeader())."\r\n";
-        $request = $this->getRequestBody($stopPointRef, $depArrTime);
+        $request = $this->getRequestBody($stopPointRef, $this->getDepArrTime());
 
         // Use key 'http' even if you send the request to https://...
         $options = array(
