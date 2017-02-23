@@ -10,7 +10,7 @@
  * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-$fetcher = new \Chill\TimeTable\DataFetcher();
+$fetcher = new \Chill\Timetable\DataFetcher();
 
 if ($use_mock === true) {
     $fetcher->setMockPath(VER_RESOURCE_ROOT."/mock.txt");
@@ -58,6 +58,7 @@ $fetchedJourneys = 0;
 foreach ($arrivals as $arrival) {
     $journey = $journeyFactory->createJourney($arrival);
     $known   = $journey->getThisCall()->getServiceDeparture();
+
     if ($known === null) {
         $known = $journey->getThisCall()->getServiceArrival();
     }
@@ -81,9 +82,15 @@ $timetable = array(
     'observedStation' => $observed,
 );
 
+$template;
+if ($data_only === true) {
+    $template = 'timetable_data.html.twig';
+} else {
+    $template = 'timetable.html.twig';
+}
 
 // ///// Print stuff
-$template = $TWIG->loadTemplate('timetable.html.twig');
+$template = $TWIG->loadTemplate($template);
 echo $template->render(
     array(
         'page' => $PAGE,

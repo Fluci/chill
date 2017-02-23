@@ -1,5 +1,5 @@
 {
     "require": {
-        "twig/twig": "@stable"
+        "twig/twig": "1.*.*"
     }
 }

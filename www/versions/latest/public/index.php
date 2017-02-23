@@ -21,6 +21,11 @@ if (\Chill\Util\Util::methodRequest('mock', array('GET'), '0') === '-1') {
 
 $PAGE['use_mock'] = $use_mock;
 
+$data_only = false;
+if (isset($_GET['data_only']) === true && $_GET['data_only'] === 't') {
+    $data_only = true;
+}
+
 /*
     Important links:
 

@@ -8,7 +8,15 @@
 
 {% block htmlHeader %}
 <script type="text/javascript">
-setTimeout(function(){ location.reload(true); }, {{ timetable.refreshInterval }});
+var updateTimetable = function(){
+    // update
+    $("#journeys_overview").load("/?stop_point_ref=8503099&data_only=t");
+    setTimeout(updateTimetable, {{ timetable.refreshInterval }});
+}
+function init(){
+    setTimeout(updateTimetable, {{ timetable.refreshInterval }});
+}
+window.addEventListener("load", init, false);
 </script>
 <style>
 .navbar {margin-bottom: 0;}
@@ -26,53 +34,8 @@ setTimeout(function(){ location.reload(true); }, {{ timetable.refreshInterval }}
     Departure
 </div>
 
-<div class="journeys">
-{% for journey in journeys %}
-    {# get first station #}
-    {% set start = journey.PreviousCalls[0] %}
-
-    {# get the stop we requested to observe #}
-    {% set stop = journey.ThisCall %}
-
-    {# get last station where the train will end #}
-    {% set end = journey.OnwardCalls|last %}
-
-    {# set stopIsStart = (start.StopPointRef == stop.StopPointRef) #}
-    {# set endIsStart = (end.StopPointRef == stop.StopPointRef) #}
-    {% set stopIsStart = false %}
-    {% set endIsStart = false %}
-
-    {% set overdue = stop.ServiceArrival.overdueFormat %}
-    {% set durationUntil = stop.ServiceArrival.durationUntilEstimatedFormat %}
-
-    <div class="stopPoint container-fluid">
-        <div class="arrival row">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <span class="line">{{ journey.Service.EntireLineName }}</span>:
-                <span class="stop">{{ stop.StopPointName.Text }}</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 col-md-2">
-                <span class="time">{{ stop.ServiceArrival.TimetabledTime|date("H:i") }}</span>
-                    {% if overdue > 0 %}
-                    <span class="overdue">+{{ overdue }}'</span>
-                    {% endif %}
-            </div>
-            <div class="col-xs-6 col-sm-3 col-md-2">
-                T {{ durationUntil }}
-            </div>
-            <div class="detail col-xs-12 col-sm-12 col-md-4">
-                {% if not stopIsStart %}
-                    <span class="stop">{{ start.StopPointName.Text }}</span> <span class="time">{{ start.ServiceDeparture.TimetabledTime|date("H:i") }}</span>
-                {% endif %}
-                {% if not endIsStart %}
-                    {% if not (stopIsStart or endIsStart) %}&rarr; {% endif %}<span class="stop">{{ end.StopPointName.Text }}</span> <span class="time">{{ end.ServiceArrival.TimetabledTime|date("H:i") }}</span>
-                {% endif %}
-            </div>
-        </div>
-    </div>{# stopPoint #}
-
-{% endfor %}
-
+<div class="journeys" id="journeys_overview">
+{% include 'timetable_data.html.twig' %}
 </div>{# journeys #}
 <div class="journeys_fill_l"></div>
 <div class="journeys_fill_r"></div>
