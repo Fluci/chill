@@ -1,0 +1,23 @@
+{
+  "name": "chill",
+  "homepage": "https://github.com/Fluci/chill",
+  "authors": [
+    "Felice Serena <felice@serena-mueller.ch>"
+  ],
+  "description": "Your personal Swiss Timetable",
+  "main": "index.php",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "jquery-csv": "^0.8.2"
+  }
+}
