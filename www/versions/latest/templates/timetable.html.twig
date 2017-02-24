@@ -10,7 +10,7 @@
 <script type="text/javascript">
 var updateTimetable = function(){
     // update
-    $("#journeys_overview").load("/?stop_point_ref=8503099&data_only=t");
+    $("#journeys_overview").load("/?stop_point_ref={{ timetable.stopPointRef }}&data_only=t");
     setTimeout(updateTimetable, {{ timetable.refreshInterval }});
 }
 function init(){

@@ -80,6 +80,7 @@ $timetable = array(
     // [ms]
     'refreshInterval' => $CONFIG['timetable']['refresh_interval'] * 1000,
     'observedStation' => $observed,
+    'stopPointRef' => $stopPointRef,
 );
 
 $template;
