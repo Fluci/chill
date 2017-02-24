@@ -35,6 +35,7 @@ Updating to the website could then be a single atomic operation of repointing th
 - `inc`: PHP-includes that are included by pages in `public`.
 - `lib`: The site's library classes (modelling of the transport system, utility classes, …)
 - `public`: Root of your web server. All requests should end up in this directory. All resources like scripts, stylesheets, scripts and images that should be accessed from the internet belong in here.
+- `public/e`: Directory for external client-side frameworks, fetched by bower.
 - `res`: Data-resources (list of stations, mock data).
 - `singletons`: Objects that are used on all pages but always are the same.
 - `templates`: Templates for TWIG to render HTML pages.
@@ -48,6 +49,8 @@ In addition, `./deploy_env.sh` creates all folders for the dev-environment and d
 
 1. At some point, you need to fetch dependencies (twig, phpunit). 
 There are two `composer.json` files, one in the root (for unit test environment). The other one in the web server root `www/versions/latest/` (for the template engine). Run the bash command `composer update;` in the corresponding directory at some point. If in doubt, do it first.
+
+2. Navigate into `www/versions/latest` (or your version) and execute `bower install` which fetches all the user-side dependencies.
 
 2. Load everything in `www` onto a server.
 
