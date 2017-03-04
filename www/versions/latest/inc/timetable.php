@@ -59,11 +59,12 @@ foreach ($arrivals as $arrival) {
     $journey = $journeyFactory->createJourney($arrival);
     $known   = $journey->getThisCall()->getServiceDeparture();
 
+
     if ($known === null) {
         $known = $journey->getThisCall()->getServiceArrival();
     }
 
-    if ($known->getEstimatedTime()->getTimestamp() >= $min) {
+    if ($known->getEstimatedTime()->getTimestamp() >= $min || $use_mock) {
         $journeys[] = $journey;
         if (++$fetchedJourneys >= $max) {
             break;

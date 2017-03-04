@@ -90,6 +90,9 @@ class RequestCreator extends \Chill\Travel\RequestCreator
         $now         = \Chill\Util\Util::formatZulu();
         $depArrTimeF = \Chill\Util\Util::formatZulu($this->getDepArrTime());
 
+        // [departure, arrival]
+        $stopEventType = 'departure';
+
         $request = '<Trias version="1.1" '
                 .'xmlns="http://www.vdv.de/trias" '
                 .'xmlns:siri="http://www.siri.org.uk/siri" '
@@ -109,7 +112,7 @@ class RequestCreator extends \Chill\Travel\RequestCreator
                             .'<NumberOfResults>'
                                 .$this->getNumberOfResults()
                             .'</NumberOfResults>'
-                            .'<StopEventType>arrival</StopEventType>'
+                            .'<StopEventType>'.$stopEventType.'</StopEventType>'
                             .'<IncludePreviousCalls>true</IncludePreviousCalls>'
                             .'<IncludeOnwardCalls>true</IncludeOnwardCalls>'
                             .'<IncludeRealtimeData>true</IncludeRealtimeData>'

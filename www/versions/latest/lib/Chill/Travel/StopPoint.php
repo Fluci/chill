@@ -72,11 +72,24 @@ class StopPoint
 
     /**
      * Returns when the vehicle should leave the stop point.
-     * @return \Chill\Travel\DateTime Departure tiem.
+     * @return \Chill\Travel\DateTime Departure time.
      */
     public function getServiceDeparture()
     {
         return $this->departure;
+    }
+
+    /**
+     * Returns the arrival time, if not available, returns the departure time.
+     * @return \Chill\Travel\DateTime Departure time
+     */
+    public function getServiceTime()
+    {
+        if($this->getServiceArrival() !== null)
+        {
+            return $this->getServiceArrival();
+        }
+        return $this->getServiceDeparture();
     }
 
     /**

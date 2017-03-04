@@ -1,20 +1,21 @@
 {% for journey in journeys %}
-    {# get first station #}
-    {% set start = journey.PreviousCalls[0] %}
 
     {# get the stop we requested to observe #}
     {% set stop = journey.ThisCall %}
 
+    {# get first station #}
+    {% set start = journey.PreviousCalls[0]|default(stop) %}
+
     {# get last station where the train will end #}
-    {% set end = journey.OnwardCalls|last %}
+    {% set end = journey.OnwardCalls|last|default(stop) %}
 
     {# set stopIsStart = (start.StopPointRef == stop.StopPointRef) #}
     {# set endIsStart = (end.StopPointRef == stop.StopPointRef) #}
     {% set stopIsStart = false %}
     {% set endIsStart = false %}
 
-    {% set overdue = stop.ServiceArrival.overdueFormat %}
-    {% set durationUntil = stop.ServiceArrival.durationUntilEstimatedFormat %}
+    {% set overdue = stop.ServiceTime.overdueFormat %}
+    {% set durationUntil = stop.ServiceTime.durationUntilEstimatedFormat %}
 
     <div class="stopPoint container-fluid">
         <div class="arrival row">
@@ -23,7 +24,7 @@
                 <span class="stop">{{ stop.StopPointName.Text }}</span>
             </div>
             <div class="col-xs-6 col-sm-3 col-md-2">
-                <span class="time">{{ stop.ServiceArrival.TimetabledTime|date("H:i") }}</span>
+                <span class="time">{{ stop.ServiceTime.TimetabledTime|date("H:i") }}</span>
                     {% if overdue > 0 %}
                     <span class="overdue">+{{ overdue }}'</span>
                     {% endif %}
@@ -33,10 +34,12 @@
             </div>
             <div class="detail col-xs-12 col-sm-12 col-md-4">
                 {% if not stopIsStart %}
-                    <span class="stop">{{ start.StopPointName.Text }}</span> <span class="time">{{ start.ServiceDeparture.TimetabledTime|date("H:i") }}</span>
+                    <span class="stop">{{ start.StopPointName.Text }}</span> <span class="time">{{ start.ServiceTime.TimetabledTime|date("H:i") }}</span>
                 {% endif %}
                 {% if not endIsStart %}
-                    {% if not (stopIsStart or endIsStart) %}&rarr; {% endif %}<span class="stop">{{ end.StopPointName.Text }}</span> <span class="time">{{ end.ServiceArrival.TimetabledTime|date("H:i") }}</span>
+                    {% if not (stopIsStart or endIsStart) %}&rarr; {% endif %}
+                    <span class="stop">{{ end.StopPointName.Text }}</span>
+                    <span class="time">{{ end.ServiceTime.TimetabledTime|date("H:i") }}</span>
                 {% endif %}
             </div>
         </div>
